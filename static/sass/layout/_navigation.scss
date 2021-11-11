@@ -1,0 +1,78 @@
+.nav-top {
+  position: relative;
+  font-size: 0.9rem;
+  padding: 5px 0;
+  z-index: 10;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+ 
+  &.cl-w{
+    background: $color-white !important;
+    border-bottom: 1px solid $color-primary;
+
+     
+      .nav-item {
+        .nav-link {
+          color: $color-primary !important;
+        }
+      }
+      .sign-in-nav,
+      .sign-up-nav,
+      .youtube {
+        color: $color-primary !important;
+        padding: 0.3em 0.5em;
+        display: inline-block;
+        margin-right: 0.5em;
+        transition: all .3s ease;
+        &.youtube{
+          &:hover {
+            color: rgb(223, 21, 21) !important;
+          }
+        }
+        &:hover {
+          color: $color-primary-light !important;
+        }
+      }
+  }
+  @media (max-width:768px) {
+    display: none;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .nav-list {
+      margin: 0;
+      display: inline-block;
+      .nav-item {
+        display: inline;
+        .nav-link {
+          color: $color-white;
+          display: inline-block;
+          padding-left: 0;
+          transition: all .3s ease;
+          &:hover{
+            color: $color-primary-light;
+          }
+        }
+      }
+    }
+    .sign-in-nav,
+    .sign-up-nav,
+    .youtube {
+      color: $color-white;
+      padding: 0.3em 0.5em;
+      display: inline-block;
+      margin-right: 0.5em;
+      transition: all .3s ease;
+      &.youtube{
+        &:hover {
+          color: rgb(223, 21, 21);
+        }
+      }
+      &:hover {
+        color: $color-primary-light;
+      }
+    }
+  }
+}

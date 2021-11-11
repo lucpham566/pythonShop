@@ -1,0 +1,538 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shoes Up</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cuprum&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="./css/main.css" /> -->
+    <link rel="stylesheet" href="./css/checkout.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- ------------------ slick ------------------------- -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick-theme.css"
+    />
+    <!-- ------------------- fancybox ---------------------------->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
+    />
+  </head>
+
+  <body data-no-turbolink>
+    <header class="banner">
+      <div class="wrap">
+        <div class="logo logo--left">
+          <a href="/">
+            <img
+              class="logo__image logo__image--medium"
+              src="./img/logo.jpg"
+            />
+          </a>
+        </div>
+      </div>
+    </header>
+    <aside>
+      <button
+        class="order-summary-toggle"
+        data-toggle="#order-summary"
+        data-toggle-class="order-summary--is-collapsed"
+      >
+        <span class="wrap">
+          <span class="order-summary-toggle__inner">
+            <h4 class="">
+              Đơn hàng (3 sản phẩm)
+            </h4>
+            <span class="order-summary-toggle__total-recap"></span>
+          </span>
+        </span>
+      </button>
+    </aside>
+    <div class="content">
+      <form>
+        <input type="hidden" name="_method" value="patch" />
+        <div class="wrap">
+          <main class="main">
+            <header class="main__header">
+              <div class="logo logo--left">
+                <a href="/">
+                  <img
+                    class="logo__image logo__image--medium"
+                    src="img/logo.jpg"
+                  />
+                </a>
+              </div>
+            </header>
+            <div class="main__content">
+              <article class="animate-floating-labels row">
+                <div class="col-12 col-md-6 col--two mt-3">
+                  <section class="section">
+                    <div class="section__header">
+                      <div class="layout-flex">
+                        <h2
+                          class="section__title layout-flex__item layout-flex__item--stretch"
+                        >
+                          <i
+                            class="fa fa-id-card-o fa-lg section__title--icon hide-on-desktop"
+                          ></i>
+
+                          Thông tin mua hàng
+                        </h2>
+
+                        <a class=""
+                          href="/sign-in.html"
+                        >
+                          <i class="fa fa-user-circle-o fa-lg"></i>
+                          <span>Đăng nhập </span>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="section__content">
+                      <div class="fieldset">
+                        <input
+                          type="text"
+                          class="form-control mt-3"
+                          name=""
+                          id=""
+                          aria-describedby="helpId"
+                          placeholder="Email (tùy chọn)"
+                        />
+
+                        <input
+                          type="text"
+                          class="form-control mt-3"
+                          name=""
+                          id=""
+                          aria-describedby="helpId"
+                          placeholder="Họ và tên"
+                        />
+
+                        <input
+                        type="text"
+                        class="form-control mt-3"
+                        name=""
+                        id=""
+                        aria-describedby="helpId"
+                        placeholder="Số điện thoại"
+                        />
+
+                        <input
+                        type="text"
+                        class="form-control mt-3"
+                        name=""
+                        id=""
+                        aria-describedby="helpId"
+                        placeholder="Địa chỉ"
+                        />
+
+          
+                        <select class="form-control mt-3" name="" id="">
+                            <option>Tỉnh thành</option>
+                            <option></option>
+                            <option></option>
+                        </select>
+
+                        <select class="form-control mt-3" name="" id="">
+                            <option>Quận huyện</option>
+                            <option></option>
+                            <option></option>
+                        </select>
+
+                        <select class="form-control mt-3" name="" id="">
+                            <option>Phường xã</option>
+                            <option></option>
+                            <option></option>
+                        </select>
+
+      
+                        <textarea class="form-control mt-3" name="" id="" rows="3" placeholder="Ghi chú (tùy chọn)"></textarea>
+
+                       
+                    </div>
+                  </section>
+                </div>
+                <div class="col-12 col-md-6 col--two mt-3">
+                  <section class="section">
+                    <div class="section__header">
+                      <div class="layout-flex">
+                        <h2
+                          class="section__title layout-flex__item layout-flex__item--stretch"
+                        >
+                          <i
+                            class="fa fa-credit-card fa-lg section__title--icon hide-on-desktop"
+                          ></i>
+                          Thanh toán
+                        </h2>
+                      </div>
+                    </div>
+                    <div class="section__content">
+                      <div class="content-box">
+                        <div class="content-box__row">
+                          <div class="radio-wrapper">
+                            <div class="radio__input">
+                              <input
+                                name="paymentMethod"
+                                id="paymentMethod-198982"
+                                type="radio"
+                                class="input-radio"
+                                data-bind="paymentMethod"
+                                value="198982"
+                                checked
+                              />
+                            </div>
+                            <label
+                              for="paymentMethod-198982"
+                              class="radio__label"
+                            >
+                              <span class="radio__label__primary"
+                                >Chuyển khoản qua ngân hàng</span
+                              >
+                              <span class="radio__label__accessory">
+                                <span class="radio__label__icon">
+                                    <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
+                                </span>
+                              </span>
+                            </label>
+                          </div>
+
+                          <div
+                            class="content-box__row__desc"
+                          >
+                            <p>
+                              Thông tin chuyển khoản
+                            </p>
+                           
+                          </div>
+                        </div>
+
+                        <div class="content-box__row">
+                          <div class="radio-wrapper">
+                            <div class="radio__input">
+                              <input
+                                name="paymentMethod"
+                                id="paymentMethod-198740"
+                                type="radio"
+                                class="input-radio"
+                                data-bind="paymentMethod"
+                                value="198740"
+                              />
+                            </div>
+                            <label
+                              for="paymentMethod-198740"
+                              class="radio__label"
+                            >
+                              <span class="radio__label__primary"
+                                >Thanh toán khi giao hàng (COD)</span
+                              >
+                              <span class="radio__label__accessory">
+                                <span class="radio__label__icon">
+                                    <i class="fa fa-money" aria-hidden="true"></i>
+                                </span>
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <div
+                  class="order-summary__nav field__input-btn-wrapper layout-flex--row-reverse mt-2"
+                >
+                  <a href="" class="button btn-main"> Đặt hàng </a>
+
+                  <a href="/cart" class="previous-link">
+                    <i class="previous-link__arrow">❮</i>
+                    <span class="previous-link__content"
+                      >Quay về giỏ hàng</span
+                    >
+                  </a>
+                </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="main__footer unprintable">
+              <ul class="main__policy">
+                <li>
+                  <a data-toggle="#refund_term" data-toggle-class="hide"
+                    >Chính sách hoàn trả</a
+                  >
+                </li>
+                <li>
+                  <a data-toggle="#privacy_term" data-toggle-class="hide"
+                    >Chính sách bảo mật</a
+                  >
+                </li>
+                <li>
+                  <a data-toggle="#service_term" data-toggle-class="hide"
+                    >Điều khoản sử dụng</a
+                  >
+                </li>
+              </ul>
+              <p></p>
+              <div class="modal-wrapper hide" id="refund_term">
+                <div class="modal" style="display: inline-block">
+                  <div class="modal-header">
+                    <h2 class="modal-title">Chính sách hoàn trả</h2>
+                    <span
+                      class="close"
+                      data-toggle="#refund_term"
+                      data-toggle-class="hide"
+                      >&times;</span
+                    >
+                  </div>
+                  <div class="modal-body">
+                    <pre class="term-preview">
+Đối với các sản phẩm đồ da
+ 
+Chúng tôi đồng ý đổi lại những sản phẩm chưa qua sử dụng, còn nguyên hộp và bao bì trong vòng 1 tháng (kể từ thời gian thể hiện trên hóa đơn mua hàng).
+Your unworn item(s) may be exchanged within 1 month from the date of the purchase. 
+ 
+Các sản phẩm và phụ kiện có mức giảm giá đặc biệt từ 40% trở lên sẽ không được hoàn đổi với bất kỳ lý do nào.
+Special promotion or sale item(s) from 40% discount cannot be exchanged or returned for any reasons.
+ 
+Sản phẩm đổi không được hoàn tiền nếu mệnh giá thấp hơn so với ban đầu.
+The difference in price will not be returned if the price of the exchanged item(s) is lower than original item(s).
+ 
+Sản phẩm đồ da của chúng tôi được miễn phí sửa chữa trọn đời.
+Our leather item(s) are warrantied forever.
+ 
+Quý khách vui lòng mang theo hóa đơn khi đến bảo hành và đổi hàng, chúng tôi không giải quyết những trường hợp không có hóa đơn. Bất kỳ trường hợp ngoại lệ nào, chúng tôi sẽ không hoàn lại chi phí cho sản phẩm mà quý khách đã mua.
+Label must be attached to the merchandise and the original receipt must be presented. No refunds without exception.
+
+Đối với các sản phẩm của Saphir / Woly 
+
+Các sản phẩm lót giày và bàn chải được bảo hành một tháng kể từ ngày mua với những lỗi do quá trình sản xuất. Không bảo hành với các trường hợp khách hàng sử dụng sản phẩm không đúng với khuyến cáo của nhà sản xuất đã được ghi trên bao bì sản phẩm.
+ 
+Các sản phẩm chăm sóc đồ da được bảo hành nếu màu sắc, chất lượng không đúng như thông tin trên bao bì sản phẩm.
+ 
+Lỗi của sản phẩm không bao gồm các trường hợp hao mòn do sử dụng, hoặc vỡ, rách, biến dạng trong quá trình vận chuyển, bảo quản của khách hàng. 
+ 
+Sản phẩm được bảo hành phải còn nguyên nhãn mác của nhà sản xuất. Công ty V3D có quyền từ chối bảo hành đối với các sản phẩm không còn nhãn mác hoặc nhãn mác bị mờ, tẩy xóa.
+ 
+Khách hàng được miễn phí toàn bộ chi phí bảo hành, sửa chữa nếu sản phẩm đạt điều kiện bảo hành theo các quy định kể trên.
+ 
+Khách hàng có thể mang sản phẩm lỗi và hóa đơn mua hàng tới các điểm bán hàng của K.STORE để được hưởng chế độ bảo hành.</pre
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="modal-wrapper hide" id="privacy_term">
+                <div class="modal" style="display: inline-block">
+                  <div class="modal-header">
+                    <h2 class="modal-title">Chính sách bảo mật</h2>
+                    <span
+                      class="close"
+                      data-toggle="#privacy_term"
+                      data-toggle-class="hide"
+                      >&times;</span
+                    >
+                  </div>
+                  <div class="modal-body">
+                    <pre class="term-preview">
+CHÍNH SÁCH BẢO MẬT
+Cám ơn quý khách đã quan tâm và truy cập vào website. Chúng tôi tôn trọng và cam kết sẽ bảo mật những thông tin mang tính riêng tư của Quý khách.
+Chính sách bảo mật sẽ giải thích cách chúng tôi tiếp nhận, sử dụng và (trong trường hợp nào đó) tiết lộ thông tin cá nhân của Quý khách.
+Bảo vệ dữ liệu cá nhân và gây dựng được niềm tin cho quý khách là vấn đề rất quan trọng với chúng tôi. Vì vậy, chúng tôi sẽ dùng tên và các thông tin khác liên quan đến quý khách tuân thủ theo nội dung của Chính sách bảo mật. Chúng tôi chỉ thu thập những thông tin cần thiết liên quan đến giao dịch mua bán.
+Chúng tôi sẽ giữ thông tin của khách hàng trong thời gian luật pháp quy định hoặc cho mục đích nào đó. Quý khách có thể truy cập vào website và trình duyệt mà không cần phải cung cấp chi tiết cá nhân. Lúc đó, Quý khách đang ẩn danh và chúng tôi không thể biết bạn là ai nếu Quý khách không đăng nhập vào tài khoản của mình.
+1. Thu thập thông tin cá nhân
+- Chúng tôi thu thập, lưu trữ và xử lý thông tin của bạn cho quá trình mua hàng và cho những thông báo sau này liên quan đến đơn hàng, và để cung cấp dịch vụ, bao gồm một số thông tin cá nhân: danh hiệu, tên, giới tính, ngày sinh, email, địa chỉ, địa chỉ giao hàng, số điện thoại, fax, chi tiết thanh toán, chi tiết thanh toán bằng thẻ hoặc chi tiết tài khoản ngân hàng.
+- Chúng tôi sẽ dùng thông tin quý khách đã cung cấp để xử lý đơn đặt hàng, cung cấp các dịch vụ và thông tin yêu cầu thông qua website và theo yêu cầu của bạn.
+- Hơn nữa, chúng tôi sẽ sử dụng các thông tin đó để quản lý tài khoản của bạn; xác minh và thực hiện giao dịch trực tuyến, nhận diện khách vào web, nghiên cứu nhân khẩu học, gửi thông tin bao gồm thông tin sản phẩm và dịch vụ. Nếu quý khách không muốn nhận bất cứ thông tin tiếp thị của chúng tôi thì có thể từ chối bất cứ lúc nào.
+- Chúng tôi có thể chuyển tên và địa chỉ cho bên thứ ba để họ giao hàng cho bạn (ví dụ cho bên chuyển phát nhanh hoặc nhà cung cấp).
+- Chi tiết đơn đặt hàng của bạn được chúng tôi lưu giữ nhưng vì lí do bảo mật nên chúng tôi không công khai trực tiếp được. Tuy nhiên, quý khách có thể tiếp cận thông tin bằng cách đăng nhập tài khoản trên web. Tại đây, quý khách sẽ thấy chi tiết đơn đặt hàng của mình, những sản phẩm đã nhận và những sản phẩm đã gửi và chi tiết email, ngân hàng và bản tin mà bạn đặt theo dõi dài hạn.
+- Quý khách cam kết bảo mật dữ liệu cá nhân và không được phép tiết lộ cho bên thứ ba. Chúng tôi không chịu bất kỳ trách nhiệm nào cho việc dùng sai mật khẩu nếu đây không phải lỗi của chúng tôi.
+- Chúng tôi có thể dùng thông tin cá nhân của bạn để nghiên cứu thị trường. mọi thông tin chi tiết sẽ được ẩn và chỉ được dùng để thống kê. Quý khách có thể từ chối không tham gia bất cứ lúc nào.
+2. Bảo mật
+- Chúng tôi có biện pháp thích hợp về kỹ thuật và an ninh để ngăn chặn truy cập trái phép hoặc trái pháp luật hoặc mất mát hoặc tiêu hủy hoặc thiệt hại cho thông tin của bạn.
+- Chúng tôi khuyên quý khách không nên đưa thông tin chi tiết về việc thanh toán với bất kỳ ai bằng e-mail, chúng tôi không chịu trách nhiệm về những mất mát quý khách có thể gánh chịu trong việc trao đổi thông tin của quý khách qua internet hoặc email.
+- Quý khách tuyệt đối không sử dụng bất kỳ chương trình, công cụ hay hình thức nào khác để can thiệp vào hệ thống hay làm thay đổi cấu trúc dữ liệu. Nghiêm cấm việc phát tán, truyền bá hay cổ vũ cho bất kỳ hoạt động nào nhằm can thiệp, phá hoại hay xâm nhập vào dữ liệu của hệ thống website. Mọi vi phạm sẽ bị tước bỏ mọi quyền lợi cũng như sẽ bị truy tố trước pháp luật nếu cần thiết.
+- Mọi thông tin giao dịch sẽ được bảo mật nhưng trong trường hợp cơ quan pháp luật yêu cầu, chúng tôi sẽ buộc phải cung cấp những thông tin này cho các cơ quan pháp luật.
+Các điều kiện, điều khoản và nội dung của trang web này được điều chỉnh bởi luật pháp Việt Nam và tòa án Việt Nam có thẩm quyền xem xét.
+3. Quyền lợi khách hàng
+-Quý khách có quyền yêu cầu truy cập vào dữ liệu cá nhân của mình, có quyền yêu cầu chúng tôi sửa lại những sai sót trong dữ liệu của bạn mà không mất phí. Bất cứ lúc nào bạn cũng có quyền yêu cầu chúng tôi ngưng sử dụng dữ liệu cá nhân của bạn cho mục đích tiếp thị.</pre
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="modal-wrapper hide" id="service_term">
+                <div class="modal" style="display: inline-block">
+                  <div class="modal-header">
+                    <h2 class="modal-title">Điều khoản sử dụng</h2>
+                    <span
+                      class="close"
+                      data-toggle="#service_term"
+                      data-toggle-class="hide"
+                      >&times;</span
+                    >
+                  </div>
+                  <div class="modal-body">
+                    <pre class="term-preview">
+HƯỚNG DẪN MUA HÀNG
+Bước 1: Truy cập website và lựa chọn sản phẩm cần mua để mua hàng
+Bước 2:  Click và sản phẩm muốn mua, màn hình hiển thị ra pop up với các lựa chọn sau:
+Nếu bạn muốn tiếp tục mua hàng: Bấm vào phần tiếp tục mua hàng để lựa chọn thêm sản phẩm vào giỏ hàng
+Nếu bạn muốn xem giỏ hàng để cập nhật sản phẩm: Bấm vào xem giỏ hàng
+Nếu bạn muốn đặt hàng và thanh toán cho sản phẩm này vui lòng bấm vào: Đặt hàng và thanh toán
+Bước 3: Lựa chọn thông tin tài khoản thanh toán
+Nếu bạn đã có tài khoản vui lòng nhập thông tin tên đăng nhập là email và mật khẩu vào mục đã có tài khoản trên hệ thống
+Nếu bạn chưa có tài khoản và muốn đăng ký tài khoản vui lòng điền các thông tin cá nhân để tiếp tục đăng ký tài khoản. Khi có tài khoản bạn sẽ dễ dàng theo dõi được đơn hàng của mình
+Nếu bạn muốn mua hàng mà không cần tài khoản vui lòng nhấp chuột vào mục đặt hàng không cần tài khoản
+Bước 4: Điền các thông tin của bạn để nhận đơn hàng, lựa chọn hình thức thanh toán và vận chuyển cho đơn hàng của mình
+Bước 5: Xem lại thông tin đặt hàng, điền chú thích và gửi đơn hàng
+Sau khi nhận được đơn hàng bạn gửi chúng tôi sẽ liên hệ bằng cách gọi điện lại để xác nhận lại đơn hàng và địa chỉ của bạn.
+Trân trọng cảm ơn.</pre
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+          <aside class="sidebar">
+            <div class="sidebar__header">
+              <h2 class="sidebar__title">Đơn hàng (3 sản phẩm)</h2>
+            </div>
+            <div class="sidebar__content">
+              <div
+                id="order-summary"
+                class="order-summary order-summary--is-collapsed"
+              >
+                <div class="order-summary__sections">
+                  <div
+                    class="order-summary__section order-summary__section--product-list order-summary__section--is-scrollable order-summary--collapse-element"
+                  >
+                    <table class="product-table">
+                      <caption class="visually-hidden">
+                        Chi tiết đơn hàng
+                      </caption>
+                      <tbody>
+                        <tr class="product">
+                          <td class="product__image">
+                            <div class="product-thumbnail">
+                              <div
+                                class="product-thumbnail__wrapper"
+                                data-tg-static
+                              >
+                                <img
+                                  src="//bizweb.dktcdn.net/thumb/thumb/100/195/073/products/sp9461-golde-vitello-bordeaux-a.jpg?v=1591604636737"
+                                  alt=""
+                                />
+                              </div>
+                              <span class="product-thumbnail__quantity">3</span>
+                            </div>
+                          </td>
+                          <th class="product__description">
+                            <span class="product__description__name">
+                              Giày Gianni Conti SP9641 Moccasin Italy - Bordeaux
+                            </span>
+
+                            <span class="product__description__property">
+                              Đen - 39
+                            </span>
+                          </th>
+                          <td class="product__quantity visually-hidden">
+                            <em>Số lượng:</em> 3
+                          </td>
+                          <td class="product__price">13.050.000₫</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div
+                    class="order-summary__section order-summary__section--discount-code"
+                  >
+                    <h3 class="visually-hidden">Mã khuyến mại</h3>
+                    <div class="edit_checkout animate-floating-labels">
+                      <div class="fieldset">
+                        <div class="field">
+                          <div class="field__input-btn-wrapper">
+                            <div class="field__input-wrapper">
+                              <input
+                                type="text"
+                                class="form-control"
+                                name=""
+                                id=""
+                                aria-describedby="helpId"
+                                placeholder="Nhập mã giảm giá"
+                              />
+                            </div>
+                            <button class="btn-sm btn-main ml-2">
+                              <span class="spinner-label">Áp dụng</span>
+                            </button>
+                          </div>
+
+                          <p
+                            class="field__message field__message--error field__message--error-always-show"
+                            data-bind-show="!isLoadingReductionCode && isLoadingReductionCodeError"
+                            data-bind="loadingReductionCodeErrorMessage"
+                          ></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <table class="total-line-table">
+                      <caption class="visually-hidden">
+                        Tổng giá trị
+                      </caption>
+
+                      <tbody class="total-line-table__tbody">
+                        <tr class="total-line total-line--subtotal">
+                          <th class="total-line__name">Tạm tính</th>
+                          <td class="total-line__price">4.350.000₫</td>
+                        </tr>
+
+                        <tr class="total-line total-line--shipping-fee">
+                          <th class="total-line__name">Phí vận chuyển</th>
+                          <td class="total-line__price">13.050.000₫</td>
+                        </tr>
+                      </tbody>
+                      <tfoot class="total-line-table__footer">
+                        <tr class="total-line payment-due">
+                          <th class="total-line__name">
+                            <span class="payment-due__label-total">
+                              Tổng cộng
+                            </span>
+                          </th>
+                          <td class="total-line__price">
+                            <span class="payment-due__price">
+                              13.050.000₫
+                            </span>
+                          </td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

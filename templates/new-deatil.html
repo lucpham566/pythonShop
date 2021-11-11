@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shoes Up</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cuprum&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- ------------------ slick ------------------------- -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick-theme.css"
+    />
+    <!-- ------------------- fancybox ---------------------------->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
+    />
+  </head>
+  <body>
+    <nav class="nav-top cl-w" id="top">
+      <div class="container">
+        <ul class="nav-list mr-auto">
+          <li class="nav-item">
+            <a href="about-us.html" class="nav-link"
+              ><i class="fa fa-phone" aria-hidden="true"></i> 1900633385</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="about-us.html" class="nav-link"
+              ><i class="fa fa-envelope" aria-hidden="true"></i>
+              shoesupvn@gmail.com
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="coin-recharge.html" class="nav-link"
+              ><i class="fa fa-clock-o" aria-hidden="true"></i> Mở cửa từ 8:00 -
+              22:00</a
+            >
+          </li>
+        </ul>
+        <a href="" class="sign-in-nav">Đăng nhập</a>
+        <a href="" class="sign-up-nav">Đăng ký</a>
+        <a href="" class="youtube"
+          >Youtube <i class="fa fa-youtube-play" aria-hidden="true"></i>
+        </a>
+      </div>
+    </nav>
+
+    <div class="logo-container cl-w">
+      <div class="container">
+        <div class="box-flex">
+          <div class="flex-item left">
+            <form action="">
+              <button type="submit">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+              <input
+                type="text"
+                name=""
+                placeholder="Tìm kiếm với Shoes Up ...."
+                id="input"
+                class="search"
+              />
+            </form>
+          </div>
+          <div class="flex-item middle">
+            <a href="">
+              <img class="logo" src="./img/logo.jpg" alt="" />
+            </a>
+          </div>
+          <div class="flex-item right">
+            <div class="item-right">
+              <a href="" class="cate">
+                <label for="navbar-toggler" class="navbar-toggler m-0">
+                  <i class="fa fa-bars" aria-hidden="true"></i>
+                </label>
+                <p class="name">Danh mục</p>
+              </a>
+            </div>
+            <div class="item-right">
+              <a href="" class="user">
+                <i class="fa fa-user-circle" aria-hidden="true"></i>
+                <p class="name">Tài khoản</p>
+              </a>
+            </div>
+            <div class="item-right">
+              <a href="" class="home-link">
+                <i class="fa fa-home" aria-hidden="true"></i>
+                <p class="name">Trang chủ</p>
+              </a>
+            </div>
+            <div class="item-right">
+              <a href="" class="like">
+                <i class="fa fa-heart-o" aria-hidden="true"></i>
+                <p class="name">Yêu thích</p>
+              </a>
+            </div>
+            <div class="item-right">
+              <a href="" class="cart">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <span>0</span>
+                <p class="name">Giỏ hàng</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <header class="header-menu cl-w">
+      <div class="container">
+        <nav class="navbar navbar-expand-md navbar-dark">
+          <a class="navbar-brand" href="#">
+            <img src="./img/logopng.png" alt="" />
+          </a>
+         <!-- ------search ------------------- -->
+        <button class="btn-search">
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <p>Tìm kiếm</p>
+        </button>
+        <div class="ml-auto form-search">
+          <form action="">
+            <button type="submit">
+              <i class="fa fa-search" aria-hidden="true"></i>
+              <p>Tìm kiếm</p>
+            </button>
+            <input
+              type="text"
+              name=""
+              placeholder="Tìm kiếm"
+              id="input"
+              class="search"
+            />
+          </form>
+        </div>
+        <!-- menu -->
+          <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav m-auto mt-2 mt-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Thể loại sản phẩm</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about-us.html"
+                  >Thể loại 1
+                </a>
+                <div class="sub-menu">
+                  <ul class="list row">
+                    <div class="col-md-3">
+                      <li class="item">
+                        <a href="" class="link"><h4>Sản phẩm đồ da</h4></a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                    </div>
+                    <div class="col-md-3">
+                      <li class="item">
+                        <a href="" class="link"><h4>Sản phẩm đồ da</h4></a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                    </div>
+                    <div class="col-md-3">
+                      <a class="img link">
+                        <img src="./img/background1.jpg" alt="">
+                      </a>
+                    </div>
+                    <div class="col-md-3">
+                      <a class="img link">
+                        <img src="./img/background1.jpg" alt="">
+                      </a>
+                    </div>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about-us.html"
+                  >Thể loại 1
+                </a>
+                <div class="sub-menu">
+                  <ul class="list row">
+                    <div class="col-md-3">
+                      <li class="item">
+                        <a href="" class="link"><h4>Sản phẩm đồ da</h4></a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                    </div>
+                    <div class="col-md-3">
+                      <li class="item">
+                        <a href="" class="link"><h4>Sản phẩm đồ da</h4></a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                    </div>
+                    <div class="col-md-3">
+                      <a class="img link">
+                        <img src="./img/background1.jpg" alt="">
+                      </a>
+                    </div>
+                    <div class="col-md-3">
+                      <a class="img link">
+                        <img src="./img/background1.jpg" alt="">
+                      </a>
+                    </div>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about-us.html"
+                  >Thể loại 1
+                </a>
+                <div class="sub-menu">
+                  <ul class="list row">
+                    <div class="col-md-3">
+                      <li class="item">
+                        <a href="" class="link"><h4>Sản phẩm đồ da</h4></a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                    </div>
+                    <div class="col-md-3">
+                      <li class="item">
+                        <a href="" class="link"><h4>Sản phẩm đồ da</h4></a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                    </div>
+                    <div class="col-md-3">
+                      <a class="img link">
+                        <img src="./img/background1.jpg" alt="">
+                      </a>
+                    </div>
+                    <div class="col-md-3">
+                      <a class="img link">
+                        <img src="./img/background1.jpg" alt="">
+                      </a>
+                    </div>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about-us.html"
+                  >Thể loại 1
+                </a>
+                <div class="sub-menu">
+                  <ul class="list row">
+                    <div class="col-md-3">
+                      <li class="item">
+                        <a href="" class="link"><h4>Sản phẩm đồ da</h4></a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                    </div>
+                    <div class="col-md-3">
+                      <li class="item">
+                        <a href="" class="link"><h4>Sản phẩm đồ da</h4></a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                    </div>
+                    <div class="col-md-3">
+                      <a class="img link">
+                        <img src="./img/background1.jpg" alt="">
+                      </a>
+                    </div>
+                    <div class="col-md-3">
+                      <a class="img link">
+                        <img src="./img/background1.jpg" alt="">
+                      </a>
+                    </div>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about-us.html"
+                  >Thể loại 1
+                </a>
+                <div class="sub-menu">
+                  <ul class="list row">
+                    <div class="col-md-3">
+                      <li class="item">
+                        <a href="" class="link"><h4>Sản phẩm đồ da</h4></a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                    </div>
+                    <div class="col-md-3">
+                      <li class="item">
+                        <a href="" class="link"><h4>Sản phẩm đồ da</h4></a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                      <li class="item">
+                        <a href="" class="link">Sản phẩm đồ da</a>
+                      </li>
+                    </div>
+                    <div class="col-md-3">
+                      <a class="img link">
+                        <img src="./img/background1.jpg" alt="">
+                      </a>
+                    </div>
+                    <div class="col-md-3">
+                      <a class="img link">
+                        <img src="./img/background1.jpg" alt="">
+                      </a>
+                    </div>
+                  </ul>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </nav>
+
+      </div>
+      
+      <!--menu mobile-->
+      <div class="menu-mobile">
+        <!-- ------------------menu----------------------- -->
+        <input
+          type="checkbox"
+          class="navbar-input"
+          name=""
+          id="navbar-toggler"
+        />
+        <label for="navbar-toggler" class="overlay"></label>
+        <div class="navbar-toggler-mobile">
+          <div class="title-menu">
+            <h3 class="title">Shoes Up</h3>
+            <label for="navbar-toggler" class="exit"
+              ><span>Đóng</span><i class="fa fa-times" aria-hidden="true"></i
+            ></label>
+          </div>
+          <ul class="nav-list">
+            <li class="nav-item-mobile">
+              <a class="nav-link" href="#">Dịch vụ chăm sóc</a>
+              <label for="sub-menu-toggler1" class="add">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </label>
+             
+            </li>
+            <li class="nav-item-mobile">
+              <a class="nav-link" href="#">Dịch vụ chăm sóc</a>
+              <label for="sub-menu-toggler1" class="add">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </label>
+             
+            </li>
+            <li class="nav-item-mobile">
+              <a class="nav-link" href="#">Dịch vụ chăm sóc</a>
+              <label for="sub-menu-toggler1" class="add">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </label>
+             
+            </li>
+            <li class="nav-item-mobile">
+              <a class="nav-link" href="#">Dịch vụ chăm sóc</a>
+              <label for="sub-menu-toggler1" class="add">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </label>
+             
+            </li>
+            <li class="nav-item-mobile">
+              <a class="nav-link" href="#">Dịch vụ chăm sóc</a>
+              <label for="sub-menu-toggler1" class="add">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </label>
+             
+            </li>
+            <li class="nav-item-mobile">
+              <a class="nav-link" href="#">Dịch vụ chăm sóc</a>
+              <label for="sub-menu-toggler1" class="add">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </label>
+             
+            </li>
+            <li class="nav-item-mobile">
+              <a class="nav-link" href="#">Dịch vụ chăm sóc</a>
+              <label for="sub-menu-toggler1" class="add">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </label>
+             
+            </li>
+            <li class="nav-item-mobile">
+              <a class="nav-link" href="#">Dịch vụ chăm sóc</a>
+              <label for="sub-menu-toggler1" class="add">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </label>
+             
+            </li>
+            
+          </ul>
+          <div class="box-sub-menu">
+            <div class="title-menu">
+              <h3 class="title">Danh mục 1</h3>
+              <label  class="back-cate"
+                ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+              </label>
+            </div>
+            <ul class="sub-menu">
+              <li class="sub-menu-item">
+                <a class="category-item" href="#">
+                  <i class="fas fa-piano"></i>
+                  Chăm sóc định kỳ 
+                  <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="sub-menu-item">
+                <a class="category-item" href="#">
+                  <i class="fas fa-piano"></i>
+                  Bảo dưỡng chuyên sâu
+                  <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="sub-menu-item">
+                <a class="category-item" href="#">
+                  <i class="fas fa-piano"></i>
+                  Phục hồi làm mới 
+                  <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="sub-menu-item">
+                <a class="category-item" href="#">
+                  <i class="fas fa-piano"></i>
+                  Xem tất cả
+                  <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+              </li>
+          
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="new-detail">
+      <div class="container">
+          <div class="products">
+                <div class="row">
+                  <div class="col-lg-3">
+                    <div class="category-container">
+                      <h3 class="title">
+                        <i class="fa fa-bars" aria-hidden="true"></i> Danh mục bài viết
+                      </h3>
+                      <ul class="category-list">
+                        <li class="category-item">
+                          <a href="" class="category-link">
+                            <i
+                              class="fa fa-chevron-circle-right"
+                              aria-hidden="true"
+                            ></i>
+                            Bài viết nổi bật
+                          </a>
+                          <div class="sub-menu">
+                              <a href="" class="sub-link-item active">- thể loại bài viết</a>
+                              <a href="" class="sub-link-item">- thể loại bài viết</a>
+                              <a href="" class="sub-link-item">- thể loại bài viết</a>
+                              <a href="" class="sub-link-item">- thể loại bài viết</a>
+                              <a href="" class="sub-link-item">- thể loại bài viết</a>
+                              <a href="" class="sub-link-item">- thể loại bài viết</a>
+      
+                          </div>
+                        </li>
+                        <li class="category-item">
+                          <a href="" class="category-link">
+                            <i
+                              class="fa fa-chevron-circle-right"
+                              aria-hidden="true"
+                            ></i>
+                            Phụ tùng động cơ
+                          </a>
+                        </li>
+                        <li class="category-item">
+                          <a href="" class="category-link">
+                            <i
+                              class="fa fa-chevron-circle-right"
+                              aria-hidden="true"
+                            ></i>
+                            Phụ tùng động cơ
+                          </a>
+                        </li>
+                        <li class="category-item">
+                          <a href="" class="category-link">
+                            <i
+                              class="fa fa-chevron-circle-right"
+                              aria-hidden="true"
+                            ></i>
+                            Phụ tùng động cơ
+                          </a>
+                        </li>
+                        <li class="category-item">
+                          <a href="" class="category-link">
+                            <i
+                              class="fa fa-chevron-circle-right"
+                              aria-hidden="true"
+                            ></i>
+                            Phụ tùng động cơ
+                          </a>
+                        </li>
+                        <li class="category-item">
+                          <a href="" class="category-link">
+                            <i
+                              class="fa fa-chevron-circle-right"
+                              aria-hidden="true"
+                            ></i>
+                            Phụ tùng động cơ
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="category-container special-new">
+                      <h3 class="title">
+                        <i class="fa fa-newspaper-o" aria-hidden="true"></i> Bài viết nổi bật
+                      </h3>
+                      <ul class="category-list">
+                        <li class="category-item">
+                          <a href="new-deatil.html" class="category-link">
+                            <div class="img">
+                              <img src="img/background1.jpg" alt="">
+                            </div>
+                            <div class="content-text">
+                              <h4 class="name">
+                                Đổi màu nội thất màu nội thất  Đổi màu nội thất màu nội thất 
+                              </h4>
+                              <p class="text">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque nostrum atque ullam, pariatur mollitia reprehenderit, laudantium reiciendis enim magnam tempore suscipit. Iste magnam excepturi dolor, officia recusandae dicta omnis tenetur?
+                              </p>
+                            </div>
+                          </a>
+                        </li>
+                       <li class="category-item">
+                          <a href="new-deatil.html" class="category-link">
+                            <div class="img">
+                              <img src="img/background5.jpg" alt="">
+                            </div>
+                            <div class="content-text">
+                              <h4 class="name">
+                                Cách phối màu sơn đẹp 2020
+                              </h4>
+                              <p class="text">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore perferendis, repellat amet commodi delectus maiores cum id atque similique perspiciatis at, doloremque ipsa soluta vitae eos dolorum. Aspernatur, nemo reiciendis.
+                              </p>
+                            </div>
+                          </a>
+                        </li>
+                       <li class="category-item">
+                          <a href="new-deatil.html" class="category-link">
+                            <div class="img">
+                              <img src="img/background5.jpg" alt="">
+                            </div>
+                            <div class="content-text">
+                              <h4 class="name">
+                                Cách phối màu sơn đẹp 2020
+                              </h4>
+                              <p class="text">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore perferendis, repellat amet commodi delectus maiores cum id atque similique perspiciatis at, doloremque ipsa soluta vitae eos dolorum. Aspernatur, nemo reiciendis.
+                              </p>
+                            </div>
+                          </a>
+                        </li>
+                       <li class="category-item">
+                          <a href="new-deatil.html" class="category-link">
+                            <div class="img">
+                              <img src="img/background5.jpg" alt="">
+                            </div>
+                            <div class="content-text">
+                              <h4 class="name">
+                                Cách phối màu sơn đẹp 2020
+                              </h4>
+                              <p class="text">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore perferendis, repellat amet commodi delectus maiores cum id atque similique perspiciatis at, doloremque ipsa soluta vitae eos dolorum. Aspernatur, nemo reiciendis.
+                              </p>
+                            </div>
+                          </a>
+                        </li>
+                       <li class="category-item">
+                          <a href="new-deatil.html" class="category-link">
+                            <div class="img">
+                              <img src="img/background5.jpg" alt="">
+                            </div>
+                            <div class="content-text">
+                              <h4 class="name">
+                                Cách phối màu sơn đẹp 2020
+                              </h4>
+                              <p class="text">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore perferendis, repellat amet commodi delectus maiores cum id atque similique perspiciatis at, doloremque ipsa soluta vitae eos dolorum. Aspernatur, nemo reiciendis.
+                              </p>
+                            </div>
+                          </a>
+                        </li>
+                       <li class="category-item">
+                          <a href="new-deatil.html" class="category-link">
+                            <div class="img">
+                              <img src="img/background5.jpg" alt="">
+                            </div>
+                            <div class="content-text">
+                              <h4 class="name">
+                                Cách phối màu sơn đẹp 2020
+                              </h4>
+                              <p class="text">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore perferendis, repellat amet commodi delectus maiores cum id atque similique perspiciatis at, doloremque ipsa soluta vitae eos dolorum. Aspernatur, nemo reiciendis.
+                              </p>
+                            </div>
+                          </a>
+                        </li>
+                       <li class="category-item">
+                          <a href="new-deatil.html" class="category-link">
+                            <div class="img">
+                              <img src="img/background5.jpg" alt="">
+                            </div>
+                            <div class="content-text">
+                              <h4 class="name">
+                                Cách phối màu sơn đẹp 2020
+                              </h4>
+                              <p class="text">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore perferendis, repellat amet commodi delectus maiores cum id atque similique perspiciatis at, doloremque ipsa soluta vitae eos dolorum. Aspernatur, nemo reiciendis.
+                              </p>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="category-container tags">
+                      <h3 class="title">
+                        Các thẻ liên kết
+                      </h3>
+                      <div class="tag-container">
+                        <a href="" class="tag">carmina</a>
+                        <a href="" class="tag">Đồ nam</a>
+                        <a href="" class="tag">Đồ da</a>
+                        <a href="" class="tag">Chọn bộ suit phù hợp</a>
+                        <a href="" class="tag">Họa tiết sọc</a>
+                        <a href="" class="tag">carmina</a>
+                        <a href="" class="tag">Đồ nam</a>
+                        <a href="" class="tag">Đồ da</a>
+                        <a href="" class="tag">Chọn bộ suit phù hợp</a>
+                        <a href="" class="tag">Họa tiết sọc</a>
+                        <a href="" class="tag">carmina</a>
+                        <a href="" class="tag">Đồ nam</a>
+                        <a href="" class="tag">Đồ da</a>
+                        <a href="" class="tag">Chọn bộ suit phù hợp</a>
+                        <a href="" class="tag">Họa tiết sọc</a>
+                        <a href="" class="tag">carmina</a>
+                        <a href="" class="tag">Đồ nam</a>
+                        <a href="" class="tag">Đồ da</a>
+                        <a href="" class="tag">Chọn bộ suit phù hợp</a>
+                        <a href="" class="tag">Họa tiết sọc</a>
+                        <a href="" class="tag">carmina</a>
+                        <a href="" class="tag">Đồ nam</a>
+                        <a href="" class="tag">Đồ da</a>
+                        <a href="" class="tag">Chọn bộ suit phù hợp</a>
+                        <a href="" class="tag">Họa tiết sọc</a>
+                        <a href="" class="tag">carmina</a>
+                        <a href="" class="tag">Đồ nam</a>
+                        <a href="" class="tag">Đồ da</a>
+                        <a href="" class="tag">Chọn bộ suit phù hợp</a>
+                        <a href="" class="tag">Họa tiết sọc</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-9">
+                    <h2 class="title-list-product">
+                      <i class="fa fa-newspaper-o" aria-hidden="true"></i> Sản phẩm chất lượng
+                  </h2>
+                    <div class="content">
+                        <h3>
+                            Sản phẩm phụ tùng xe chất lượng 2020
+                        </h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt neque alias, veniam molestias praesentium, similique placeat assumenda architecto voluptates rem reprehenderit nesciunt, consequuntur dignissimos tempore adipisci ullam consectetur! Numquam, dolores.
+                        </p>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt neque alias, veniam molestias praesentium, similique placeat assumenda architecto voluptates rem reprehenderit nesciunt, consequuntur dignissimos tempore adipisci ullam consectetur! Numquam, dolores.
+                      </p>
+                      <b>nội thất đẹp nhất</b>
+                      <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt neque alias, veniam molestias praesentium, similique placeat assumenda architecto voluptates rem reprehenderit nesciunt, consequuntur dignissimos tempore adipisci ullam consectetur! Numquam, dolores.
+                      </p>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt neque alias, veniam molestias praesentium, similique placeat assumenda architecto voluptates rem reprehenderit nesciunt, consequuntur dignissimos tempore adipisci ullam consectetur! Numquam, dolores.
+                    </p>
+                    <img src="img/background4.jpg" alt="" width="100%">
+                    <b>nội thất đẹp nhất</b>
+                      <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt neque alias, veniam molestias praesentium, similique placeat assumenda architecto voluptates rem reprehenderit nesciunt, consequuntur dignissimos tempore adipisci ullam consectetur! Numquam, dolores.
+                      </p>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt neque alias, veniam molestias praesentium, similique placeat assumenda architecto voluptates rem reprehenderit nesciunt, consequuntur dignissimos tempore adipisci ullam consectetur! Numquam, dolores.
+                    </p>
+                    <img src="img/background5.jpg" alt="" width="100%">
+                    <b>nội thất đẹp nhất</b>
+                      <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt neque alias, veniam molestias praesentium, similique placeat assumenda architecto voluptates rem reprehenderit nesciunt, consequuntur dignissimos tempore adipisci ullam consectetur! Numquam, dolores.
+                      </p>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt neque alias, veniam molestias praesentium, similique placeat assumenda architecto voluptates rem reprehenderit nesciunt, consequuntur dignissimos tempore adipisci ullam consectetur! Numquam, dolores.
+                    </p>
+                    </div>
+                  </div>
+                </div>
+          </div>
+        </div>
+  </div>
+
+    
+
+      <!-- phone -->
+     <div class="hotline-phone-ring-wrap">
+      <div class="hotline-phone-ring">
+        <div class="hotline-phone-ring-circle"></div>
+        <div class="hotline-phone-ring-circle-fill"></div>
+        <div class="hotline-phone-ring-img-circle">
+          <a  class="pps-btn-img">
+            <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-phone">
+        <h4 class="title">
+          Liên hệ ngay với chúng tôi!
+          <span class="ml-auto close-bn"><i class="fa fa-times" aria-hidden="true"></i></span>
+        </h4>
+        <div class="contact-item">
+          <img src="./img/user-call.png" width="50px" alt="">
+          <span>0865289326</span>
+        </div>
+        <div class="contact-item">
+          <img src="./img/user-call.png" width="50px" alt="">
+          <span>0865289326</span>
+        </div>
+        <div class="contact-item">
+          <img src="./img/user-call.png" width="50px" alt="">
+          <span>0865289326</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- message -->
+    <div class="message-ring-wrap">
+      <div class="hotline-phone-ring">
+        <div class="hotline-phone-ring-circle"></div>
+        <div class="hotline-phone-ring-circle-fill"></div>
+        <div class="hotline-phone-ring-img-circle">
+          <a class="pps-btn-img">
+            <i class="fa fa-comments" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-contact">
+        <h4 class="title">
+          Liên hệ ngay với chúng tôi!
+          <span class="ml-auto close-bn"><i class="fa fa-times" aria-hidden="true"></i></span>
+        </h4>
+        <div class="contact-item">
+          <img src="./img/icon-facebook.png" width="50px" alt="">
+          <span>Facebook</span>
+        </div>
+        <div class="contact-item">
+          <img src="./img/icon-zalo.png" width="50px" alt="">
+          <span>0865289326</span>
+        </div>
+        <div class="contact-item">
+          <img src="./img/icon-message.png" width="50px" alt="">
+          <span>Message</span>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="contact-form container">
+        <div class="row">
+          <div class="col-md-6">
+            <h3 class="title">ĐĂNG KÝ NHẬN TIN TỪ CHÚNG TÔI</h3>
+            <p class="text">
+              Vui lòng nhập email để nhận các thông tin mới nhất từ chúng tôi
+            </p>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="row">
+                <div class="col-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name=""
+                    id=""
+                    aria-describedby="helpId"
+                    placeholder="Họ tên của bạn"
+                  />
+                </div>
+                <div class="col-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name=""
+                    id=""
+                    aria-describedby="helpId"
+                    placeholder="Địa chỉ email của bạn"
+                  />
+                </div>
+                <div class="col-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name=""
+                    id=""
+                    aria-describedby="helpId"
+                    placeholder="Số điện thoại của bạn"
+                  />
+                </div>
+                <div class="col-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name=""
+                    id=""
+                    aria-describedby="helpId"
+                    placeholder="Địa chỉ"
+                  />
+                </div>
+              </div>
+              <a class="button btn-main">Gửi</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container pt-3">
+        <div class="text-center pt-2">
+          <a class="navbar-brand" href="#"
+            ><img src="./img/logo.jpg" alt="logo" height="100px"
+          /></a>
+        </div>
+        <div class="text-center container-media">
+          <a href="#" class="facebook"
+            ><i class="fa fa-facebook-official" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="insta"
+            ><i class="fa fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="youtube"
+            ><i class="fa fa-youtube-play" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="tiktok">
+            <img src="./img/tiktok.png" alt="" />
+          </a>
+        </div>
+        <div class="row">
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <ul class="footer-ul">
+              <li>
+                <h6 class="display-6 mb-4">BẢN ĐỒ</h6>
+              </li>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7449.419253995985!2d105.84151262413083!3d21.004273744046397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac768ffe1abd%3A0x22b136bcf1c08e2a!2zQsOhY2ggS2hvYSwgSGFpIELDoCBUcsawbmcsIEjDoCBO4buZaSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1601625659074!5m2!1svi!2s"
+                width="100%"
+                height="250"
+                frameborder="0"
+                style="border: 0"
+                allowfullscreen=""
+                aria-hidden="false"
+                tabindex="0"
+              ></iframe>
+            </ul>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <ul class="footer-ul">
+              <li>
+                <h6 class="display-6 mb-4">HỖ TRỢ KHÁCH HÀNG</h6>
+              </li>
+              <li>
+                <a href="">
+                  <p>Hướng dẫn mua hàng</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <p>Chính sách bảo mật</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <p>Chính sách đổi trả</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <p>Chính sách vận chuyển</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <p>Chính sách bảo hành</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./img/bct.webp" alt="" height="50px" />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <ul class="footer-ul">
+              <li>
+                <h6 class="display-6 mb-4">Liên hệ</h6>
+              </li>
+              <li>
+                <a href="#">
+                  <p>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    12 Faraday Street, Northern Quarter, Manchester, M1 1BE
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <p>
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    088 682 32 22
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <p>
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    shoesupvn@gmail.com
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <ul class="footer-ul">
+              <li>
+                <h6 class="display-6 mb-4">LIKE PAGE FACEBOOK</h6>
+              </li>
+              <iframe
+                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FShoesUpVn&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                width="100%"
+                height="250"
+                style="border: none; overflow: hidden"
+                scrolling="no"
+                frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              ></iframe>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <h6 class="info-ft text-center mt-4">Copyrights © 2017 by PHAM LUC</h6>
+    </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="js/control.js"></script>
+  </body>
+</html>

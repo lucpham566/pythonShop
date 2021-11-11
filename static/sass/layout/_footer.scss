@@ -1,0 +1,126 @@
+footer {
+  margin-top: 150px;
+  background-color: rgb(32, 32, 32);
+  padding-top: 110px;
+  position: relative;
+  @media (max-width: 768px) {
+    margin-top: 200px;
+    padding-top: 200px;
+  }
+  .contact-form {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: $color-white;
+    padding: 40px;
+    color: $color-primary !important;
+    .title {
+      margin-top: 1em;
+      color: $color-primary !important;
+
+    }
+    .text {
+      color: $color-primary !important;
+
+    }
+    input {
+      margin-bottom: 0.5em;
+      background: none;
+      border: none;
+      border-bottom: 1px solid rgb(243, 243, 243);
+      border-radius: 0;
+      &:focus {
+        background: none;
+        color: white;
+      }
+    }
+  }
+  .container-media {
+    padding: 1em;
+    margin-bottom: 1em;
+    a {
+      color: white;
+      font-size: 1.5rem;
+      margin: 0.5em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      &.facebook {
+        &:hover {
+          color: rgb(49, 49, 180);
+        }
+      }
+      &.youtube {
+        &:hover {
+          color: rgb(197, 44, 6);
+        }
+      }
+      &.insta {
+        &:hover {
+          color: rgb(197, 19, 173);
+        }
+      }
+      &.tiktok {
+        img{
+          height: 20px;
+          background-color: white;
+          transition: all 0.3s ease;
+          border-radius: 2px;
+        }
+        &:hover {
+          img{
+            background-color: rgb(172, 62, 107);
+          }
+        }
+      }
+    }
+  }
+  .info-ft {
+    background: #000;
+    margin: 0;
+    padding: 1em;
+    font-size: 1rem;
+    color: #969c9e;
+  }
+  .title {
+    color: $color-white;
+  }
+  .footer-contact {
+    input {
+      font-size: 0.8rem;
+      padding: 1em;
+    }
+  }
+}
+
+footer {
+  display: inline-block;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer ul h6 {
+  color: white;
+  font-size: 1.4rem;
+}
+
+footer p {
+  color: white;
+  font-size: 16px;
+}
+
+footer .footer-contact li {
+  display: inline;
+}
+
+footer .footer-contact img {
+  margin: 10px;
+  width: 50px;
+  border-radius: 10px;
+}
+
+footer hr {
+  border: 1px solid white;
+}

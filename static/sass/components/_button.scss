@@ -1,0 +1,81 @@
+.button {
+  width: 160px;
+  padding: 7px 0;
+  text-align: center;
+  border-radius: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.btn-main {
+  background: $color-primary;
+  color: $color-white;
+  border: $color-primary;
+  border: 1px solid $color-primary;
+    transition: all .3s ease;
+  &:hover {
+    background: $color-white;
+    color: $color-primary;
+    border: 1px solid $color-primary;
+    background: transparent;
+  }
+}
+
+.btn-main-secondary {
+  background: linear-gradient(to right, rgb(247, 204, 86), rgb(240, 185, 6));
+  color: $color-white;
+  &:hover {
+    background: $color-secondary-dark;
+    color: $color-white;
+  }
+}
+
+.btn-main-tertiary {
+  background: $color-tertiary-light;
+  color: $color-white;
+  &:hover {
+    background: $color-tertiary-dark;
+    color: $color-white;
+  }
+}
+
+.btn-main-outline {
+  border: 1px solid $color-primary;
+  color: $color-primary;
+  transition: all .3s ease;
+  &:hover {
+    color: $color-white;
+    background: $color-primary;
+  }
+}
+
+.btn-main-outline-secondary {
+  border: 1px solid $color-secondary-dark;
+  color: $color-secondary-dark;
+  transition: all .3s ease;
+  &:hover {
+    color: $color-white;
+    background: $color-secondary-dark;
+  }
+}
+
+.btn-main-outline-tertiary {
+  border: 1px solid $color-tertiary-dark;
+  color: $color-tertiary-dark;
+  transition: all .3s ease;
+  &:hover {
+    color: $color-white;
+    background: $color-tertiary-dark;
+  }
+}
+
+.btn-outline-white {
+    border: 1px solid $color-white;
+    color: $color-white;
+    transition: all 0.3s ease;
+    &:hover {
+      color: $color-primary;
+      background: $color-white;
+    }
+  }

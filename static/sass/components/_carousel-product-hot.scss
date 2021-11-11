@@ -1,0 +1,109 @@
+.carousel-list-product {
+  margin: 2em 0;
+  .title-list-product {
+    font-size: 1rem;
+    position: relative;
+    background: $color-secondary-light;
+    color: $color-white;
+    padding: 0.5em 1em;
+    padding-right: 2em;
+    min-width: 350px;
+    text-align: center;
+    text-align: left;
+    margin: 0;
+    text-transform: uppercase;
+    box-shadow: 0 0 5px rgb(131, 131, 131);
+  }
+  .carousel-product-hot {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    .slide {
+      padding: 5px;
+      position: relative;
+      .product-item {
+        margin-top: 1em;
+        .card {
+          border: 1px solid $color-primary;
+          border-radius: 2px;
+          .img {
+            height: 250px;
+            overflow: hidden;
+            @media (max-width: 768px) {
+              height: 370px;
+            }
+            img {
+              width: 100%;
+            }
+          }
+          .card-body {
+            padding: 0.5em 1em;
+            text-align: center;
+            .card-title {
+              font-size: 1.2rem;
+              height: 2.3em;
+              margin-bottom: 0;
+              color: $color-black;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 2;
+              overflow: hidden;
+            }
+            .card-text {
+              color: $color-primary;
+              margin: 0.3em 0;
+              font-size: 1.2rem;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+
+    .slick-prev {
+      position: absolute;
+      left: 5%;
+      z-index: 2;
+      opacity: 0.5;
+      transition: all ease 0.2s;
+      &::before {
+        font-family: "FontAwesome";
+        color: $color-secondary !important;
+        font-size: 2rem;
+        font-weight: 900;
+        content: "\f0a8";
+      }
+    }
+    .slick-next {
+      position: absolute;
+      transition: all ease 0.2s;
+      right: 5%;
+      z-index: 2;
+      opacity: 0.5;
+      &::before {
+        font-family: "FontAwesome";
+        color: $color-secondary !important;
+        font-size: 2rem;
+        font-weight: 900;
+        content: "\f0a9";
+      }
+    }
+    &:hover {
+      .slick-prev,
+      .slick-next {
+        opacity: 1;
+      }
+    }
+    .slick-dots {
+      bottom: 5px;
+      li {
+        button {
+          &::before {
+            font-size: 0.8rem !important;
+          }
+        }
+      }
+    }
+  }
+}

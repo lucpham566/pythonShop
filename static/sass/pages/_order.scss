@@ -1,0 +1,153 @@
+.order {
+  margin-bottom: 2em;
+  margin-top: 1em;
+  .content {
+    .product-list {
+      .product-item {
+        display: flex;
+        padding: 1em;
+        border-radius: 5px;
+        background: rgb(238, 238, 238);
+        margin-top: 1em;
+        .img {
+          width: 100px;
+          height: 100px;
+          overflow: hidden;
+          img {
+            width: 100%;
+          }
+        }
+        .detail {
+          padding-left: 1em;
+          max-width: 230px;
+          flex-grow: 1;
+          .title {
+            margin: 0;
+            font-size: 1rem;
+            color: $color-primary !important;
+          }
+          .text {
+            margin: 0;
+            padding-top: 3px;
+            font-size: 0.9rem;
+          }
+          .delete{
+            color: rgb(202, 16, 16);
+          }
+        }
+      }
+      td{
+      }
+      .increases-form {
+        margin: 0 auto;
+        text-align: center;
+        min-width: 150px;
+        .value-button {
+          display: inline-block;
+          border: 1px solid $color-black;
+          margin: 0px;
+          height: 40px;
+          width: 40px;
+          padding: 5px 0;
+          text-align: center;
+          vertical-align: middle;
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          -khtml-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+
+        .value-button:hover {
+          cursor: pointer;
+        }
+
+        #decrease {
+          border-right: none;
+          margin-right: -4px;
+        }
+
+        #increase {
+          margin-left: -4px;
+          border-left: none;
+
+        }
+
+        #input-wrap {
+          margin: 0px;
+          padding: 0px;
+        }
+
+        input#number {
+          text-align: center;
+          border: none;
+          background-color: transparent;
+          border-top: 1px solid $color-black;
+          border-bottom: 1px solid $color-black;
+          margin: 0px;
+          width: 40px;
+          height: 40px;
+          vertical-align: middle;
+
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
+    }
+    .order {
+        position: sticky;
+        top: 3em;
+      .total-money {
+        margin-top: 1em;
+        padding: 1em;
+        border-radius: 5px;
+        background: rgb(238, 238, 238);
+        .title {
+          font-size: 1.2rem;
+        }
+        .text {
+          font-size: 2rem;
+          color: rgb(238, 41, 41);
+          margin: 0;
+          font-weight: bold;
+        }
+      }
+      .contact {
+        margin-top: 1em;
+        background-size: cover;
+        border-radius: 5px;
+        overflow: hidden;
+        height: 400px;
+        position: relative;
+        border: none;
+        background-color: $color-primary;
+        .title {
+          font-size: 1.1rem;
+          font-weight: bold;
+        color: white !important;
+
+        }
+        .text {
+          font-size: 1rem;
+          text-shadow: none;
+          font-weight: normal;
+        color: white !important;
+
+        }
+        input {
+          font-size: 0.8rem;
+          margin-top: 0.5em;
+        }
+        textarea {
+          margin-top: 0.5em;
+          resize: none;
+        }
+      }
+    }
+  }
+}

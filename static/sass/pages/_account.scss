@@ -1,0 +1,30 @@
+.account{
+    padding: 1em 0;
+    .cate-list{
+        padding: 1em 0;
+        background-color: rgb(231, 231, 231);
+        .cate-item{
+            .link-item{
+                display: block;
+                padding: 5px;
+                padding-left: 1em;
+                color: $color-primary;
+                font-size: 1.1rem;
+                &.active{
+                    border-left: 3px solid $color-primary;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    .content{
+        padding-top: 1em;
+        .title{
+            font-size: 3rem;
+
+        }
+        .box-info{
+            margin-top: 3em;
+        }
+    }
+}
