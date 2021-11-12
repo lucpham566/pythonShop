@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
  
     <link rel="stylesheet" href="{% static './css/main.css'%}" />
+    <link rel="stylesheet" href="{% static './css/styles.css'%}" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -649,15 +650,18 @@
     <div class="banner-top">
       <div class="container-carousel">
         <div class="carousel-banner">
-          <div class="slide">
+        {% if banners %} {% for item in banners %}
+            <div class="slide">
+            {% if item.image %}
             <div
               class="background"
-              style="background-image: url(./img/background1.jpg)"
+              style="background-image:url({{item.image.url}})"
             ></div>
+            {% endif %}
+            
             <div class="caption">
               <h4 class="title">
-                Chúng tôi chia sẻ giải pháp chăm sóc và phục hồi đồ da hàng
-                hiệu.
+                {{item.name}}
               </h4>
 
               <div class="container-btn">
@@ -667,60 +671,8 @@
               </div>
             </div>
           </div>
-          <div class="slide">
-            <div
-              class="background"
-              style="background-image: url(./img/background1.jpg)"
-            ></div>
-            <div class="caption">
-              <h4 class="title">
-                Chúng tôi chia sẻ giải pháp chăm sóc và phục hồi đồ da hàng
-                hiệu.
-              </h4>
-
-              <div class="container-btn">
-                <div class="button btn-outline-white btn-right">
-                  Click ngay
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="slide">
-            <div
-              class="background"
-              style="background-image: url(./img/background1.jpg)"
-            ></div>
-            <div class="caption">
-              <h4 class="title">
-                Chúng tôi chia sẻ giải pháp chăm sóc và phục hồi đồ da hàng
-                hiệu.
-              </h4>
-
-              <div class="container-btn">
-                <div class="button btn-outline-white btn-right">
-                  Click ngay
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="slide">
-            <div
-              class="background"
-              style="background-image: url(./img/background1.jpg)"
-            ></div>
-            <div class="caption">
-              <h4 class="title">
-                Chúng tôi chia sẻ giải pháp chăm sóc và phục hồi đồ da hàng
-                hiệu.
-              </h4>
-
-              <div class="container-btn">
-                <div class="button btn-outline-white btn-right">
-                  Click ngay
-                </div>
-              </div>
-            </div>
-          </div>
+            {% endfor %} {% endif %}
+          
         </div>
       </div>
     </div>
@@ -859,30 +811,14 @@
             <a href="" class="button btn-main">Đăng ký kênh</a>
           </div>
           <div class="carousel-video mt-3">
+            {% if videos %} {% for item in videos %}
             <div class="slide">
               <div class="video-item">
-                <iframe
-                  width="100%"
-                  height="300"
-                  src="https://www.youtube.com/embed/FSlU3dXlPh4"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
+                {{item.video|safe}}
               </div>
             </div>
-            <div class="slide">
-              <div class="video-item">
-                <iframe
-                  width="100%"
-                  height="300"
-                  src="https://www.youtube.com/embed/FSlU3dXlPh4"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </div>
-            </div>
+            {% endfor %} {% endif %}
+            
             <div class="slide">
               <div class="video-item">
                 <iframe
