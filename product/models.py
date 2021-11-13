@@ -13,8 +13,10 @@ class Product(models.Model):
     name = models.CharField(max_length=200)
     avatar = models.ImageField(null=True)
     price = models.IntegerField(default=0)
+    vote = models.IntegerField(default=5)
     intro = models.TextField(max_length=300)
     content = models.TextField(max_length=5000)
+    special = models.BooleanField(default=True)
 
     def __str__(self) -> str:
         return self.name
@@ -24,4 +26,5 @@ class ProductImage(models.Model):
     image = models.ImageField(null=True)
     def __str__(self) -> str:
         return self.product.name
+
 

@@ -1,5 +1,4 @@
-{% extends 'base/base.html' %} 
-{% block content %}
+{% extends 'base/base.html' %} {% block content %}
 <main class="products">
   <div class="container">
     <div class="products">
@@ -32,72 +31,30 @@
           <div class="category-container special-product">
             <h3 class="title">Sản phẩm bán chạy</h3>
             <ul class="category-list">
+            {% for item in product_specials %}
               <li class="category-item">
-                <a href="product-detail.html" class="category-link">
+                <a href="{% url 'product-detail' item.id %}" class="category-link">
                   <div class="img">
-                    <img src="img/background4.jpg" alt="" />
+                  {% if item.avatar %}
+                    <img
+                      src="{{item.avatar.url}}"
+                      alt=""
+                    />
+                    {% else %}
+                    <img
+                      src="data:image/png;base64,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"
+                      alt=""
+                    />
+                    {% endif %}
                   </div>
                   <div class="content-text">
-                    <h4 class="name">Đổi màu nội thất màu nội thất</h4>
-                    <p class="text">Giá : 3.600.000 đ</p>
+                    <h4 class="name">{{item.name}}</h4>
+                    <p class="text">Giá : {{item.price}} đ</p>
                   </div>
                 </a>
               </li>
-              <li class="category-item">
-                <a href="product-detail.html" class="category-link">
-                  <div class="img">
-                    <img src="img/background4.jpg" alt="" />
-                  </div>
-                  <div class="content-text">
-                    <h4 class="name">Đổi màu nội thất màu nội thất</h4>
-                    <p class="text">Giá : 3.600.000 đ</p>
-                  </div>
-                </a>
-              </li>
-              <li class="category-item">
-                <a href="product-detail.html" class="category-link">
-                  <div class="img">
-                    <img src="img/background4.jpg" alt="" />
-                  </div>
-                  <div class="content-text">
-                    <h4 class="name">Đổi màu nội thất màu nội thất</h4>
-                    <p class="text">Giá : 3.600.000 đ</p>
-                  </div>
-                </a>
-              </li>
-              <li class="category-item">
-                <a href="product-detail.html" class="category-link">
-                  <div class="img">
-                    <img src="img/background4.jpg" alt="" />
-                  </div>
-                  <div class="content-text">
-                    <h4 class="name">Đổi màu nội thất màu nội thất</h4>
-                    <p class="text">Giá : 3.600.000 đ</p>
-                  </div>
-                </a>
-              </li>
-              <li class="category-item">
-                <a href="product-detail.html" class="category-link">
-                  <div class="img">
-                    <img src="img/background4.jpg" alt="" />
-                  </div>
-                  <div class="content-text">
-                    <h4 class="name">Đổi màu nội thất màu nội thất</h4>
-                    <p class="text">Giá : 3.600.000 đ</p>
-                  </div>
-                </a>
-              </li>
-              <li class="category-item">
-                <a href="product-detail.html" class="category-link">
-                  <div class="img">
-                    <img src="img/background4.jpg" alt="" />
-                  </div>
-                  <div class="content-text">
-                    <h4 class="name">Đổi màu nội thất màu nội thất</h4>
-                    <p class="text">Giá : 3.600.000 đ</p>
-                  </div>
-                </a>
-              </li>
+            {% endfor %}
+              
             </ul>
           </div>
           <div class="category-container special-new">
@@ -253,7 +210,7 @@
             <div class="product-list row">
               {% if products %} {% for item in products %}
               <div class="product-item col-md-4 col-6">
-                <a href="{% url 'product-detail' item.id%}" class="card">
+                <div  class="card">
                   <div class="img">
                     {% if item.avatar %}
                     <img
@@ -272,20 +229,21 @@
                   <div class="card-body">
                     <h4 class="card-title">{{item.name}}</h4>
                     <p class="card-text">Giá : {{item.price}} đ</p>
-                    <div href="" class="star-review">
+                    <div class="star-review">
+                      {% with ''|center:item.vote as range %} {% for i in range%}
                       <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
+                      {% endfor %} {% endwith %}
                     </div>
                   </div>
                   <div class="text-center mb-2">
-                    <button href="" class="button btn-main">
+                    <button id="{{item.id}}" url="{% url "add-to-cart" %}" class="button btn-main">
                       Thêm vào giỏ hàng
                     </button>
+                    <a href="{% url 'product-detail' item.id%}" class="button btn-success mt-2">
+                      Chi tiết
+                    </a>
                   </div>
-                </a>
+                </div>
               </div>
               {% endfor %} {% endif %}
             </div>
@@ -307,4 +265,5 @@
     </div>
   </div>
 </main>
+
 {% endblock %}

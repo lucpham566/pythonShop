@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from cart.models import Customer
+from order.models import Bill
 
 # Register your models here.
-admin.site.register(Customer)
+admin.site.register(Bill)

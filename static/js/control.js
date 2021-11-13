@@ -1,7 +1,6 @@
 $(document).ready(function () {
   window.addEventListener("scroll", function () {
     var obj = $("header.header-menu").offset().top;
-    console.log(obj);
     if (obj > 185) {
       $("header.header-menu").addClass("scroll");
       $(".addThis_listSharing").css({
@@ -427,3 +426,63 @@ $('.box-sub-menu .back-cate').click(function () {
 
 })
 
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
+
+
+
+
+$(".product-list .product-item .button").click(function (){
+  var id = $(this).attr("id");
+  var url = $(this).attr("url");
+  num = 1;
+  $.ajax({
+      url: 'http://127.0.0.1:8000' + url,
+      type: 'get',
+      dataType: 'html',
+      data: {
+          id,num
+      }
+  }).done(function(ketqua) {
+      data = JSON.parse(ketqua)
+      Toast.fire({
+        icon: 'success',
+        title: 'Thêm sản phẩm thành công'
+      })
+      $(".cart span").text(data.total)
+  });
+})  
+
+$(".product-item .detail .delete").click(function (){
+  var id = $(this).attr("id");
+  var url = $(this).attr("url");
+  elm =  $(this).parent().parent().parent().parent();
+
+  num = 1;
+  $.ajax({
+      url: 'http://127.0.0.1:8000' + url,
+      type: 'get',
+      dataType: 'html',
+      data: {
+          id,num
+      }
+  }).done(function(ketqua) {
+      // console.log(ketqua)
+      data = JSON.parse(ketqua)
+      Toast.fire({
+        icon: 'success',
+        title: 'Xóa sản phẩm thành công'
+      })
+      $(".cart span").text(data.total)
+      elm.remove()
+  });
+})  

@@ -1,5 +1,4 @@
-{% extends 'base/base.html' %} 
-{% block content%}
+{% extends 'base/base.html' %} {% block content%}
 <main class="order">
   <div class="container">
     <div class="container-title-section">
@@ -9,6 +8,7 @@
     <div class="content">
       <div class="row">
         <div class="col-lg-9 product-list">
+          {% if cart %}
           <table
             class="table table-cart"
             id="dataTable"
@@ -32,24 +32,25 @@
               </tr>
             </tfoot>
             <tbody>
+              {% for item,value in cart.items %}
               <tr>
                 <td>
                   <div class="product-item">
                     <div class="img">
-                      <img src="img/background4.jpg" alt="" />
+                      <img src="{{value.image}}" alt="" />
                     </div>
                     <div class="detail">
                       <h4 class="title">
                         <a class="title" href="">
-                          Phụ tùng Thiên Nhẫn - Cung cấp phụ tùng chính hãng
+                          {{value.name}}
                         </a>
                       </h4>
                       <p class="text">Trắng - 37</p>
-                      <a href="" class="delete">Xóa sản phẩm</a>
+                      <button url={% url 'remove-to-cart' %} id="{{item}}" class="delete btn-main-outline">Xóa sản phẩm</button>
                     </div>
                   </div>
                 </td>
-                <td class="d-none d-md-block">3.990.000 đ</td>
+                <td class="d-none d-md-block">{{value.price}} đ</td>
                 <td>
                   <form class="increases-form">
                     <div
@@ -60,7 +61,7 @@
                     >
                       -
                     </div>
-                    <input type="number" id="number" value="0" />
+                    <input type="number" id="number" value="{{value.quantity}}" />
                     <div
                       class="value-button"
                       id="increase"
@@ -71,23 +72,47 @@
                     </div>
                   </form>
                 </td>
-                <td class="d-none d-md-block">3.990.000 đ</td>
+                <td class="d-none d-md-block">{{value.total}} đ</td>
               </tr>
+              {% endfor %}
             </tbody>
           </table>
+          {% else %}
+          <h1>Không có sản phẩm nào trong giỏ hàng</h1>
+          {% endif %}
+
           <a href="" class="button btn-main d-none d-md-block">
             Tiếp tục mua hàng
           </a>
         </div>
         <div class="col-lg-3">
           <div class="order">
-            <div class="total-money">
-              <h6>Tạm tính : <b>3.990.000đ</b></h6>
+            <form action="{% url "send-checkout" %}" method="post" class="total-money">
+              {% csrf_token %}
+              <h6>Tạm tính : <b>{{total}}đ</b></h6>
               <hr class="line" />
               <h3 class="title">Thành tiền :</h3>
-              <p class="text">3.990.000đ</p>
+              <p class="text">{{total}}đ</p>
               <hr class="line" />
-              <a href="" class="button btn-main btn-block mb-2">thanh toán</a>
+              <label>
+                Họ tên
+              </lable>
+              <input type="text" class="form-control" name="name" id=""  placeholder="">
+              <label>
+                Điện thoại
+              </lable>
+              <input type="text" class="form-control" name="phone" id=""  placeholder="">
+              <label>
+                Email
+              </lable>
+              <input type="text" class="form-control" name="email" id=""  placeholder="">
+              <label>
+                Địa chỉ
+              </lable>
+              <textarea class="form-control" name="address" id="" rows="3"></textarea>
+              <Button type="submit" class="button btn-main btn-block mb-2 mt-2">Đặt Hàng</Button>
+              </div>
+              
               <a
                 href=""
                 class="button btn-main-outline btn-block d-block d-md-none"
@@ -101,4 +126,24 @@
     </div>
   </div>
 </main>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+  {% if checkout_success %}
+  Toast.fire({
+          icon: 'success',
+          title: 'Thêm sản phẩm thành công'
+        })
+  {% endif %}
+</script>
 {% endblock %}
