@@ -461,28 +461,4 @@ $(".product-list .product-item .button").click(function (){
       $(".cart span").text(data.total)
   });
 })  
-
-$(".product-item .detail .delete").click(function (){
-  var id = $(this).attr("id");
-  var url = $(this).attr("url");
-  elm =  $(this).parent().parent().parent().parent();
-
-  num = 1;
-  $.ajax({
-      url: 'http://127.0.0.1:8000' + url,
-      type: 'get',
-      dataType: 'html',
-      data: {
-          id,num
-      }
-  }).done(function(ketqua) {
-      // console.log(ketqua)
-      data = JSON.parse(ketqua)
-      Toast.fire({
-        icon: 'success',
-        title: 'Xóa sản phẩm thành công'
-      })
-      $(".cart span").text(data.total)
-      elm.remove()
-  });
-})  
+  

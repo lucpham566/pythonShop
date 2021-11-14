@@ -38,6 +38,11 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
     />
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+  ></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   
   </head>
   <body>
     <nav class="nav-top cl-w" id="top">
@@ -88,7 +93,7 @@
             </form>
           </div>
           <div class="flex-item middle">
-            <a href="">
+            <a href="{% url 'index' %}">
               <img class="logo" src="{{ info_web.logo.url}}" alt="" />
             </a>
           </div>
@@ -134,7 +139,7 @@
     <header class="header-menu cl-w">
       <div class="container">
         <nav class="navbar navbar-expand-md navbar-dark">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="{% url 'index' %}">
             <img src="{{ info_web.logo.url}}" alt="" />
           </a>
           <!-- ------search ------------------- -->
@@ -416,7 +421,7 @@
       <div class="container pt-3">
         <div class="text-center pt-2">
           <a class="navbar-brand" href="#"
-            ><img src="{{ info_web.logo.url}}" alt="logo" height="100px"
+            ><img src="{{ info_web.logo.url }}" alt="logo" height="100px"
           /></a>
         </div>
         <div class="text-center container-media">
@@ -541,9 +546,7 @@
       <h6 class="info-ft text-center mt-4">Copyrights © 2017 by PHAM LUC</h6>
     </footer>
 
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-    ></script>
+    
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
       integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
@@ -559,7 +562,6 @@
       src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="{% static 'js/control.js'%}"></script>
 

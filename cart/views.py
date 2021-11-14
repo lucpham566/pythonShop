@@ -15,13 +15,13 @@ class Checkout(View):
     def get(self,request):
         
         form = SendCheckout()
-        cart = request.session['cart']
+        cart = request.session.get('cart')
         total = 0
         for item in cart:
             total = int(total) + int(cart[item]['total'])
         
         context = {"cart" : cart,"total" : total,'form': form}
-        if  request.session['checkout_success']:
+        if  request.session.get('checkout_success'):
             request.session['checkout_success']=False
             context['checkout_success']=True
             return render(request,'order.html',context)
@@ -29,8 +29,8 @@ class Checkout(View):
 
 
 def addToCart(request):
-    cart=request.session['cart'] if request.session['cart'] else {}
-    if request.is_ajax():
+    cart=request.session.get('cart') if request.session.get('cart') else {}
+    if True:
         id = request.GET.get('id')
         num = request.GET.get('num')
         product = Product.objects.get(pk=id)
@@ -56,21 +56,28 @@ def addToCart(request):
     return JsonResponse({"success":"thành công","total":len(cart)})
 
 def removeToCart(request):
-    cart=request.session['cart'] if request.session['cart'] else {}
-    if request.is_ajax():
-        id = request.GET.get('id')
-        num = request.GET.get('num')
-        
-        cart.pop(id)
-        request.session['cart'] = cart
-
-    return JsonResponse({"success":"thành công","total":len(cart)})
+    cart=request.session.get('cart') if request.session.get('cart') else {}
+    if True:
+        if request.is_ajax():
+            id = request.GET.get('id')
+            # num = request.GET.get('num')
+            
+            cart.pop(id)
+            request.session['cart'] = cart
+            # return HttpResponse('oke')
+            total_price = 0
+            for item in cart:
+                total_price = int(total_price) + int(cart[item]['total'])
+            
+    
+            
+    return JsonResponse({"success":"xóa thành công", "total":len(cart), "total_price":total_price})
 
 
 def process(request):
     # return HttpResponse(request.method)
     if request.method == "POST":
-        cart=request.session['cart'] if request.session['cart'] else {}
+        cart=request.session.get('cart') if request.session.get('cart') else {}
 
         name = request.POST.get('name')
         email =request.POST.get('email')

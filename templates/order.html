@@ -24,12 +24,12 @@
               </tr>
             </thead>
             <tfoot>
-              <tr>
+              <!-- <tr>
                 <th>Sản phẩm</th>
                 <th class="d-none d-md-block">Giá</th>
                 <th>Số lượng</th>
                 <th class="d-none d-md-block">Thành tiền</th>
-              </tr>
+              </tr> -->
             </tfoot>
             <tbody>
               {% for item,value in cart.items %}
@@ -46,7 +46,7 @@
                         </a>
                       </h4>
                       <p class="text">Trắng - 37</p>
-                      <button url={% url 'remove-to-cart' %} id="{{item}}" class="delete btn-main-outline">Xóa sản phẩm</button>
+                      <button url="{% url 'remove-to-cart' %}" id="{{item}}" class="delete btn-main-outline">Xóa sản phẩm</button>
                     </div>
                   </div>
                 </td>
@@ -81,18 +81,18 @@
           <h1>Không có sản phẩm nào trong giỏ hàng</h1>
           {% endif %}
 
-          <a href="" class="button btn-main d-none d-md-block">
+          <a href="{% url 'index'%}" class="button btn-main d-none d-md-block">
             Tiếp tục mua hàng
           </a>
         </div>
         <div class="col-lg-3">
           <div class="order">
-            <form action="{% url "send-checkout" %}" method="post" class="total-money">
+            <form action="{% url 'send-checkout' %}" method="post" class="total-money">
               {% csrf_token %}
               <h6>Tạm tính : <b>{{total}}đ</b></h6>
               <hr class="line" />
               <h3 class="title">Thành tiền :</h3>
-              <p class="text">{{total}}đ</p>
+              <p class="text money">{{total}}đ</p>
               <hr class="line" />
               <label>
                 Họ tên
@@ -126,7 +126,6 @@
     </div>
   </div>
 </main>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
   const Toast = Swal.mixin({
     toast: true,
@@ -139,10 +138,37 @@
       toast.addEventListener('mouseleave', Swal.resumeTimer)
     }
   })
+  
+  $(".product-item .detail .delete").click(function (){
+    var id = $(this).attr("id");
+    var url = $(this).attr("url");
+    elm =  $(this).parent().parent().parent().parent();
+
+    num = 1;
+    $.ajax({
+        url: 'http://127.0.0.1:8000' + url,
+        type: 'get',
+        dataType: 'html',
+        data: {
+            id,num
+        }
+    }).done(function(ketqua) {
+        // console.log(ketqua)
+        data = JSON.parse(ketqua)
+        Toast.fire({
+          icon: 'success',
+          title: 'Xóa sản phẩm thành công'
+        })
+        $(".cart span").text(data.total)
+        $(".total-money p.money").text(data.total_price+"đ")
+        $(".total-money h6 b").text(data.total_price+"đ")
+        elm.remove()
+    });
+  })  
   {% if checkout_success %}
   Toast.fire({
           icon: 'success',
-          title: 'Thêm sản phẩm thành công'
+          title: 'Đặt hàng thành công'
         })
   {% endif %}
 </script>

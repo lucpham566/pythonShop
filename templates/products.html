@@ -57,7 +57,7 @@
               
             </ul>
           </div>
-          <div class="category-container special-new">
+          <!-- <div class="category-container special-new">
             <h3 class="title">
               <i class="fa fa-newspaper-o" aria-hidden="true"></i> Tin tức nổi
               bật
@@ -180,7 +180,7 @@
                 </a>
               </li>
             </ul>
-          </div>
+          </div> -->
         </div>
         <div class="col-lg-9">
           <div class="form-group">
@@ -236,7 +236,7 @@
                     </div>
                   </div>
                   <div class="text-center mb-2">
-                    <button id="{{item.id}}" url="{% url "add-to-cart" %}" class="button btn-main">
+                    <button id="{{item.id}}" url="{% url 'add-to-cart' %}" class="button btn-main">
                       Thêm vào giỏ hàng
                     </button>
                     <a href="{% url 'product-detail' item.id%}" class="button btn-success mt-2">

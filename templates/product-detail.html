@@ -28,7 +28,6 @@
               </div>
               <div class="carousel-img-product-nav">
                 {% if product.avatar %}
-
                 <div class="slide">
                   <img src="{{product.avatar.url}}" alt="" />
                 </div>
@@ -47,11 +46,9 @@
             <div class="heading-box">
               <h3 class="title">{{product.name}}</h3>
               <div href="" class="star-review">
+                {% with ''|center:product.vote as range %} {% for i in range%}
                 <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
+                {% endfor %} {% endwith %}
               </div>
               <p class="text">{{product.intro}}</p>
             </div>
@@ -110,7 +107,7 @@
               <a href="order.html" class="button btn-main-outline">
                 mua ngay
               </a>
-              <a href="order.html" class="button btn-main"> thêm vào giỏ </a>
+              <a href="order.html" class="button btn-main"> Thêm vào giỏ </a>
             </div>
           </div>
         </div>
@@ -398,11 +395,9 @@
                 <h4 class="card-title">{{item.name}}</h4>
                 <p class="card-text">Giá : {{item.price}} đ</p>
                 <div href="" class="star-review">
+                  {% with ''|center:item.vote as range %} {% for i in range%}
                   <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
+                  {% endfor %} {% endwith %}
                 </div>
               </div>
               <div class="text-center mb-2">
