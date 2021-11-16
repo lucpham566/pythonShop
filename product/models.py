@@ -1,4 +1,5 @@
 from django.db import models
+import datetime
 
  
 class ProductCate(models.Model):
@@ -28,3 +29,14 @@ class ProductImage(models.Model):
         return self.product.name
 
 
+
+class Comment(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    name = models.CharField(max_length=200)
+    title = models.CharField(max_length=200)
+    content = models.TextField(max_length=5000)
+    vote = models.IntegerField(default=0)
+    date = models.DateField(default=datetime.datetime.now())
+    
+    def __str__(self) -> str:
+        return self.name

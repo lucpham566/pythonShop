@@ -40,7 +40,7 @@ def addToCart(request):
                 'name' : product.name,
                 'price' : product.price,
                 'image' : product.avatar.url if product.avatar else "",
-                'quantity' : int(cart[id]['quantity']) + 1
+                'quantity' : int(cart[id]['quantity']) + int(num)
             }
         else :
             itemCart = {

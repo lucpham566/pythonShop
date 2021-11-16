@@ -1,15 +1,29 @@
-from django.http.response import HttpResponse
+from django.http.response import HttpResponse, JsonResponse
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
 from django.views import View
 
-from product.models import Product, ProductCate, ProductImage
+from product.models import Comment, Product, ProductCate, ProductImage
 # Create your views here.
 
 class ProductPage(View):
 
     def get(self,request):
         product_cates = ProductCate.objects.all()
-        products = Product.objects.all()
+        product_list = Product.objects.all()
+        paginator = Paginator(product_list, 3)
+        
+        page_number = request.GET.get("page")
+        try:
+            products = paginator.page(page_number)
+        except PageNotAnInteger:
+            # Nếu page_number không thuộc kiểu integer, trả về page đầu tiên
+            products = paginator.page(1)
+        except EmptyPage:
+            # Nếu page không có item nào, trả về page cuối cùng
+            products = paginator.page(paginator.num_pages)
+
+        
         context = {"product_cates" : product_cates,"products":products}
         return render(request,'products.html',context)
 
@@ -28,5 +42,22 @@ class ProductDetail(View):
         # products = Product.objects.all()
         related_products = Product.objects.filter(category = product.category)
         images = ProductImage.objects.filter(product = product)
-        context = {"product" : product,"related_products" : related_products,"images" : images}
+        comments = Comment.objects.filter(product = product).order_by('-id')
+        context = {"product" : product,"related_products" : related_products,"images" : images,"comments" : comments}
         return render(request,'product-detail.html',context)
+    
+def addComment(request):
+    
+    vote = request.GET.get('vote')
+    name = request.GET.get('name')
+    title = request.GET.get('title')
+    content = request.GET.get('content')
+    product_id = request.GET.get('product_id')
+    # return JsonResponse({"success":"thành công"})
+    
+    product = Product.objects.get(pk=product_id)
+    
+    comment = Comment.objects.create(product=product,name=name,vote=vote,title=title,content=content)
+    comment.save()
+    
+    return JsonResponse({"success":"thành công", "created_at":comment.date})

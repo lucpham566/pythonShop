@@ -50,7 +50,7 @@
                     {% endif %}
                   </ul>
                 </div>
-                <div class="category-container tags">
+                <!-- <div class="category-container tags">
                   <h3 class="title">
                     Các thẻ liên kết
                   </h3>
@@ -86,32 +86,16 @@
                     <a href="" class="tag">Chọn bộ suit phù hợp</a>
                     <a href="" class="tag">Họa tiết sọc</a>
                   </div>
-                </div>
+                </div> -->
               </div>
               <div class="col-lg-9">
                 <h2 class="title-list-product">
                   <i class="fa fa-newspaper-o" aria-hidden="true"></i> Tất cả bài viết
-              </h2>
+                </h2>
                 <div class="content">
-                    <div class="new-banner row">
-                        <div class="col-lg-8 p-1">
-                            <a href="new-deatil.html" class="banner-item">
-                                <div class="img">
-                                  <img src="./img/background1.jpg" alt="">
-                                </div>
-                                <div class="caption-new">
-                                  <h4 class="title">
-                                    Xe ô tô đẹp nhất 2020
-                                  </h4>
-                                  <span class="date">
-                                    <i class="fa fa-calendar" aria-hidden="true"></i>
-                                    12/3/2021
-                                  </span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 p-1">
-                          <a href="new-deatil.html" class="banner-item-right">
+                  <!-- <div class="new-banner row">
+                      <div class="col-lg-8 p-1">
+                          <a href="new-deatil.html" class="banner-item">
                               <div class="img">
                                 <img src="./img/background1.jpg" alt="">
                               </div>
@@ -125,22 +109,38 @@
                                 </span>
                               </div>
                           </a>
-                          <a href="new-deatil.html" class="banner-item-right">
-                              <div class="img">
-                                <img src="./img/background1.jpg" alt="">
-                              </div>
-                              <div class="caption-new">
-                                <h4 class="title">
-                                  Xe ô tô đẹp nhất 2020
-                                </h4>
-                                <span class="date">
-                                  <i class="fa fa-calendar" aria-hidden="true"></i>
-                                  12/3/2021
-                                </span>
-                              </div>
-                          </a>
-                        </div>
-                    </div>
+                      </div>
+                      <div class="col-lg-4 p-1">
+                        <a href="new-deatil.html" class="banner-item-right">
+                            <div class="img">
+                              <img src="./img/background1.jpg" alt="">
+                            </div>
+                            <div class="caption-new">
+                              <h4 class="title">
+                                Xe ô tô đẹp nhất 2020
+                              </h4>
+                              <span class="date">
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                12/3/2021
+                              </span>
+                            </div>
+                        </a>
+                        <a href="new-deatil.html" class="banner-item-right">
+                            <div class="img">
+                              <img src="./img/background1.jpg" alt="">
+                            </div>
+                            <div class="caption-new">
+                              <h4 class="title">
+                                Xe ô tô đẹp nhất 2020
+                              </h4>
+                              <span class="date">
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                12/3/2021
+                              </span>
+                            </div>
+                        </a>
+                      </div>
+                  </div> -->
                   <div class="new-list">
                     {% if news%}
                     {% for item in news %}
@@ -155,7 +155,7 @@
                           </p>
                           <span class="date">
                             <i class="fa fa-calendar" aria-hidden="true"></i>
-                            12/3/2021
+                            {{item.date|date:"d-m-Y"}}
                           </span>
                           <p class="text-right">
                             <a href="{% url 'new-detail' item.id %}" class="see-more">

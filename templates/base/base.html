@@ -67,8 +67,8 @@
             >
           </li>
         </ul>
-        <a href="" class="sign-in-nav">Đăng nhập</a>
-        <a href="" class="sign-up-nav">Đăng ký</a>
+        <!-- <a href="" class="sign-in-nav">Đăng nhập</a>
+        <a href="" class="sign-up-nav">Đăng ký</a> -->
         <a href="{{info_web.youtube}}" class="youtube"
           >Youtube <i class="fa fa-youtube-play" aria-hidden="true"></i>
         </a>
@@ -79,7 +79,7 @@
       <div class="container">
         <div class="box-flex">
           <div class="flex-item left">
-            <form action="">
+            <!-- <form action="">
               <button type="submit">
                 <i class="fa fa-search" aria-hidden="true"></i>
               </button>
@@ -90,34 +90,34 @@
                 id="input"
                 class="search"
               />
-            </form>
+            </form> -->
           </div>
           <div class="flex-item middle">
             <a href="{% url 'index' %}">
-              <img class="logo" src="{{ info_web.logo.url}}" alt="" />
+              <img class="logo" src="{{ info_web.logo.url }}" alt="" />
             </a>
           </div>
           <div class="flex-item right">
-            <div class="item-right">
+            <!-- <div class="item-right">
               <a href="" class="cate">
                 <label for="navbar-toggler" class="navbar-toggler m-0">
                   <i class="fa fa-bars" aria-hidden="true"></i>
                 </label>
                 <p class="name">Danh mục</p>
               </a>
-            </div>
-            <div class="item-right">
+            </div> -->
+            <!-- <div class="item-right">
               <a href="" class="user">
                 <i class="fa fa-user-circle" aria-hidden="true"></i>
                 <p class="name">Tài khoản</p>
               </a>
-            </div>
-            <div class="item-right">
+            </div> -->
+            <!-- <div class="item-right">
               <a href="" class="home-link">
                 <i class="fa fa-home" aria-hidden="true"></i>
                 <p class="name">Trang chủ</p>
               </a>
-            </div>
+            </div> -->
             <div class="item-right">
               <a href="" class="like">
                 <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -167,6 +167,9 @@
             <ul class="navbar-nav m-auto mt-2 mt-lg-0">
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'index' %}">Trang chủ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'news' %}">Tin tức</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'products' %}">Sản phẩm</a>

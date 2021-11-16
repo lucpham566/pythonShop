@@ -4,26 +4,26 @@ $(document).ready(function () {
     if (obj > 185) {
       $("header.header-menu").addClass("scroll");
       $(".addThis_listSharing").css({
-        display:"block"
+        display: "block"
       })
     } else {
       $("header.header-menu").removeClass("scroll");
       $(".addThis_listSharing").css({
-        display:"none"
+        display: "none"
       })
     }
   });
-  $("#show-comment").click(function(){
+  $("#show-comment").click(function () {
     $(".write-comment").css({
-      display:"block"
+      display: "block"
     })
   })
-  $(".write-comment #close").click(function(){
+  $(".write-comment #close").click(function () {
     $(".write-comment").css({
-      display:"none"
+      display: "none"
     })
   })
-  
+
 });
 
 $(document).ready(function () {
@@ -88,7 +88,7 @@ $(document).ready(function () {
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 4,
-    dots:true,
+    dots: true,
     responsive: [
       {
         breakpoint: 1024,
@@ -152,15 +152,15 @@ $(document).ready(function () {
     slidesToShow: 3,
     responsive: [
       {
-       
+
       },
       {
         breakpoint: 1008,
-      
+
 
         settings: {
           centerMode: false,
-      centerPadding: '0',
+          centerPadding: '0',
           slidesToShow: 2,
         },
       },
@@ -168,7 +168,7 @@ $(document).ready(function () {
         breakpoint: 600,
 
         settings: {
-      centerMode: false,
+          centerMode: false,
 
           slidesToShow: 1,
         },
@@ -233,7 +233,7 @@ $(document).ready(function () {
     }
   });
 
-  
+
 });
 
 function increaseValue() {
@@ -251,19 +251,19 @@ function decreaseValue() {
   document.getElementById("number").value = value;
 }
 
-$("header .btn-search").click(function(){
+$("header .btn-search").click(function () {
   $("header .form-search").css({
-    visibility:'inherit',
+    visibility: 'inherit',
     opacity: 1,
-    transform:'translateX(0)',
+    transform: 'translateX(0)',
   })
 })
 
 $('.item-right .cate').click(function () {
   $("header .form-search").css({
-    visibility:'hidden',
+    visibility: 'hidden',
     opacity: 0,
-    transform:'translateX(100%)',
+    transform: 'translateX(100%)',
   })
 
 })
@@ -273,121 +273,121 @@ var isbox_message = false;
 
 
 $('.hotline-phone-ring-wrap .hotline-phone-ring-img-circle').click(function () {
-  if(isbox_phone){
+  if (isbox_phone) {
     $('.box-phone').css({
       visibility: 'hidden',
       opacity: 0,
-  
+
     })
     isbox_phone = false;
-    
+
   }
-  else{
+  else {
     $('.box-phone').css({
       visibility: 'visible',
       opacity: 1,
-  
+
     })
     isbox_phone = true;
-    if(isbox_message){
+    if (isbox_message) {
       $('.box-contact').css({
         visibility: 'hidden',
         opacity: 0,
-    
+
       })
       isbox_message = false;
     }
   }
-  
+
 })
 
 $('.hotline-phone-ring-wrap .box-phone .close-bn ').click(function () {
-  if(isbox_phone){
+  if (isbox_phone) {
     $('.box-phone').css({
       visibility: 'hidden',
       opacity: 0,
-  
+
     })
     isbox_phone = false;
   }
-  else{
+  else {
     $('.box-phone').css({
       visibility: 'visible',
       opacity: 1,
-  
+
     })
     isbox_phone = true;
-    
+
   }
-  
+
 })
 
 
 
 $('.message-ring-wrap .hotline-phone-ring-img-circle').click(function () {
-  if(isbox_message){
+  if (isbox_message) {
     $('.box-contact').css({
       visibility: 'hidden',
       opacity: 0,
-  
+
     })
     isbox_message = false;
   }
-  else{
+  else {
     $('.box-contact').css({
       visibility: 'visible',
       opacity: 1,
-  
+
     })
     isbox_message = true;
-    if(isbox_phone){
+    if (isbox_phone) {
       $('.box-phone').css({
         visibility: 'hidden',
         opacity: 0,
-    
+
       })
       isbox_phone = false;
     }
-   
+
   }
-  
+
 })
 
 $('.message-ring-wrap .box-contact .close-bn').click(function () {
-  if(isbox_message){
+  if (isbox_message) {
     $('.box-contact').css({
       visibility: 'hidden',
       opacity: 0,
-  
+
     })
     isbox_message = false;
   }
-  else{
+  else {
     $('.box-contact').css({
       visibility: 'visible',
       opacity: 1,
-  
+
     })
     isbox_message = true;
   }
-  
+
 })
 
 is_cart = false;
 
 
 $('.logo-container .cart').click(function () {
-  if(is_cart){
+  if (is_cart) {
     $('.logo-container .cart .cart-dropdown').css({
-      display:'none'
-  
+      display: 'none'
+
     })
     is_cart = false;
   }
-  else{
+  else {
     $('.logo-container .cart .cart-dropdown').css({
-      display:'block'
-  
+      display: 'block'
+
     })
     is_cart = true;
   }
@@ -396,12 +396,12 @@ $('.logo-container .cart').click(function () {
 
 
 $('.logo-container .cart .close').click(function () {
-    $('.logo-container .cart .cart-dropdown').css({
-      display:'none'
-  
-    })
-    is_cart = false;
-  
+  $('.logo-container .cart .cart-dropdown').css({
+    display: 'none'
+
+  })
+  is_cart = false;
+
 })
 
 
@@ -441,24 +441,90 @@ const Toast = Swal.mixin({
 
 
 
-$(".product-list .product-item .button").click(function (){
+$(".product-list .product-item .button").click(function () {
   var id = $(this).attr("id");
   var url = $(this).attr("url");
-  num = 1;
+  var num = 1;
   $.ajax({
-      url: 'http://127.0.0.1:8000' + url,
-      type: 'get',
-      dataType: 'html',
-      data: {
-          id,num
-      }
-  }).done(function(ketqua) {
-      data = JSON.parse(ketqua)
-      Toast.fire({
-        icon: 'success',
-        title: 'Thêm sản phẩm thành công'
-      })
-      $(".cart span").text(data.total)
+    url: 'http://127.0.0.1:8000' + url,
+    type: 'get',
+    dataType: 'html',
+    data: {
+      id, num
+    }
+  }).done(function (ketqua) {
+    data = JSON.parse(ketqua)
+    Toast.fire({
+      icon: 'success',
+      title: 'Thêm sản phẩm thành công'
+    })
+    $(".cart span").text(data.total)
   });
-})  
-  
+})
+
+$(".product-detail .add-to-cart").click(function () {
+  var id = $(this).attr("id");
+  var url = $(this).attr("url");
+  var chuyenlink = $(this).attr("chuyenlink");
+  var num = $(this).parent().parent().find(".amount-item").val();
+
+  $.ajax({
+    url: 'http://127.0.0.1:8000' + url,
+    type: 'get',
+    dataType: 'html',
+    data: {
+      id, num
+    }
+  }).done(function (ketqua) {
+    data = JSON.parse(ketqua)
+    Toast.fire({
+      icon: 'success',
+      title: 'Thêm sản phẩm thành công'
+    })
+    $(".cart span").text(data.total)
+    if (chuyenlink) {
+      window.location = chuyenlink
+    }
+  });
+})
+
+$(".product-detail .comment-box .add-comment").click(function () {
+  var input_votes = $("#full-stars-example-two .rating__input")
+  var vote = 0
+
+  input_votes.each(function () {
+    if ($(this).is(":checked")) {
+      vote = $(this).val();
+    }
+  });
+  var name = $("#input_name").val()
+  var title = $("#input_title").val()
+  var content = $("#input_content").val()
+  var url = $(this).attr("url");
+  var product_id = $(this).attr("product_id");
+
+  $.ajax({
+    url: 'http://127.0.0.1:8000' + url,
+    type: 'get',
+    dataType: 'html',
+    data: {
+      vote, name, title, content, product_id
+    }
+  }).done(function (ketqua) {
+    data = JSON.parse(ketqua)
+    console.log(data);
+    Toast.fire({
+      icon: 'success',
+      title: 'Bình luận thành công'
+    })
+    $("#input_title").val("")
+    $("#input_content").val("")
+    $("#input_name").val("")
+    var elm_vote = ""
+    for (var i = 0; i <vote;i++){
+      elm_vote+="<span class='fa fa-star checked'></span>"
+    }
+    $(".product-detail .comment-list").prepend("<div class='comment-item row'><div class='user col-md-3'><h4 class='name'>"+name+"</h4></div><div class='comment col-md-9'><div class='star-review'>"+elm_vote+"</div><h4 class='title'>"+title+"</h4><p class='text'>"+content+"</p><span class='count-like'> "+data.created_at+" </span></div></div>" );
+
+  });
+})

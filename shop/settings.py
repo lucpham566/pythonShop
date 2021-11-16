@@ -71,7 +71,9 @@ TEMPLATES = [
                 'product.context_processors.get_product_cate',
                 'cart.context_processors.get_amount_cart',
                 'product.context_processors.get_product_special',
-                'core.context_processors.get_service_info'
+                'core.context_processors.get_service_info',
+                'article.context_processors.get_new_special',
+                
             ],
         },
     },

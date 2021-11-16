@@ -1,4 +1,4 @@
-{% extends 'base/base.html' %} 
+{% extends 'base/base.html' %}
 {% load static %}
 
 {% block content %}
@@ -31,7 +31,7 @@
                 <div class="slide">
                   <img src="{{product.avatar.url}}" alt="" />
                 </div>
-                {% endif %} {% if images %} {% for item in images %} 
+                {% endif %} {% if images %} {% for item in images %}
                 {% if item.image %}
                 <div class="slide">
                   <img src="{{item.image.url}}" alt="" />
@@ -82,21 +82,11 @@
                 <p class="title">Chọn số lượng:</p>
                 <div class="content">
                   <form class="increases-form">
-                    <div
-                      class="value-button"
-                      id="decrease"
-                      onclick="decreaseValue()"
-                      value="Decrease Value"
-                    >
+                    <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">
                       -
                     </div>
-                    <input type="number" id="number" value="0" />
-                    <div
-                      class="value-button"
-                      id="increase"
-                      onclick="increaseValue()"
-                      value="Increase Value"
-                    >
+                    <input type="number" id="number" class="amount-item" value="0" />
+                    <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">
                       +
                     </div>
                   </form>
@@ -104,10 +94,12 @@
               </li>
             </ul>
             <div class="container-button">
-              <a href="order.html" class="button btn-main-outline">
+              <button id="{{product.id}}" url="{% url 'add-to-cart' %}" chuyenlink="{% url 'checkout' %}"
+                class="button btn-main-outline add-to-cart">
                 mua ngay
-              </a>
-              <a href="order.html" class="button btn-main"> Thêm vào giỏ </a>
+              </button>
+              <button id="{{product.id}}" url="{% url 'add-to-cart' %}" class="button btn-main add-to-cart"> Thêm vào
+                giỏ </button>
             </div>
           </div>
         </div>
@@ -208,80 +200,34 @@
           <label for="">Đánh giá</label>
           <div id="full-stars-example-two">
             <div class="rating-group">
-              <input
-                disabled
-                checked
-                class="rating__input rating__input--none"
-                name="rating3"
-                id="rating3-none"
-                value="0"
-                type="radio"
-              />
-              <label aria-label="1 star" class="rating__label" for="rating3-1"
-                ><i class="rating__icon rating__icon--star fa fa-star"></i
-              ></label>
-              <input
-                class="rating__input"
-                name="rating3"
-                id="rating3-1"
-                value="1"
-                type="radio"
-              />
-              <label aria-label="2 stars" class="rating__label" for="rating3-2"
-                ><i class="rating__icon rating__icon--star fa fa-star"></i
-              ></label>
-              <input
-                class="rating__input"
-                name="rating3"
-                id="rating3-2"
-                value="2"
-                type="radio"
-              />
-              <label aria-label="3 stars" class="rating__label" for="rating3-3"
-                ><i class="rating__icon rating__icon--star fa fa-star"></i
-              ></label>
-              <input
-                class="rating__input"
-                name="rating3"
-                id="rating3-3"
-                value="3"
-                type="radio"
-              />
-              <label aria-label="4 stars" class="rating__label" for="rating3-4"
-                ><i class="rating__icon rating__icon--star fa fa-star"></i
-              ></label>
-              <input
-                class="rating__input"
-                name="rating3"
-                id="rating3-4"
-                value="4"
-                type="radio"
-              />
-              <label aria-label="5 stars" class="rating__label" for="rating3-5"
-                ><i class="rating__icon rating__icon--star fa fa-star"></i
-              ></label>
-              <input
-                class="rating__input"
-                name="rating3"
-                id="rating3-5"
-                value="5"
-                type="radio"
-              />
+              <input disabled checked class="rating__input rating__input--none" name="rating3" id="rating3-none"
+                value="0" type="radio" />
+              <label aria-label="1 star" class="rating__label" for="rating3-1"><i
+                  class="rating__icon rating__icon--star fa fa-star"></i></label>
+              <input class="rating__input" name="rating3" id="rating3-1" value="1" type="radio" />
+              <label aria-label="2 stars" class="rating__label" for="rating3-2"><i
+                  class="rating__icon rating__icon--star fa fa-star"></i></label>
+              <input class="rating__input" name="rating3" id="rating3-2" value="2" type="radio" />
+              <label aria-label="3 stars" class="rating__label" for="rating3-3"><i
+                  class="rating__icon rating__icon--star fa fa-star"></i></label>
+              <input class="rating__input" name="rating3" id="rating3-3" value="3" type="radio" />
+              <label aria-label="4 stars" class="rating__label" for="rating3-4"><i
+                  class="rating__icon rating__icon--star fa fa-star"></i></label>
+              <input class="rating__input" name="rating3" id="rating3-4" value="4" type="radio" />
+              <label aria-label="5 stars" class="rating__label" for="rating3-5"><i
+                  class="rating__icon rating__icon--star fa fa-star"></i></label>
+              <input class="rating__input" name="rating3" id="rating3-5" value="5" type="radio" />
             </div>
           </div>
+          <label for="">Tên</label>
+          <input type="text" class="form-control" name="" id="input_name" aria-describedby="helpId" placeholder="" />
           <label for="">Tiêu đề</label>
-          <input
-            type="text"
-            class="form-control"
-            name=""
-            id=""
-            aria-describedby="helpId"
-            placeholder=""
-          />
+          <input type="text" class="form-control" name="" id="input_title" aria-describedby="helpId" placeholder="" />
           <label for="">Nội dung</label>
-          <textarea class="form-control" name="" id="" rows="3"></textarea>
+          <textarea class="form-control" name="" id="input_content" rows="3"></textarea>
           <div class="container-btn mt-2">
-            <button type="submit" class="button btn-main">Gửi</button>
+            <button type="submit" class="button btn-main add-comment" product_id="{{product.id}}"
+              url="{% url 'comment-product'%}">Gửi</button>
             <button type="button" id="close" class="button btn-main-outline">
               hủy
             </button>
@@ -289,90 +235,27 @@
         </div>
       </div>
       <div class="comment-list">
+        {% if comments %} {% for item in comments %}
         <div class="comment-item row">
           <div class="user col-md-3">
-            <h4 class="name">Phạm tiến lực</h4>
+            <h4 class="name">{{item.name}}</h4>
           </div>
           <div class="comment col-md-9">
             <div class="star-review">
+              {% with ''|center:item.vote as range %} {% for i in range%}
               <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
+              {% endfor %} {% endwith %}
             </div>
-            <h4 class="title">Great products. Great service</h4>
+            <h4 class="title">{{item.title}}</h4>
             <p class="text">
-              Love the Saphire Shoe Care line. Nearly impossible to find .
-              Hanger Project has expanded into other areas of clothing care with
-              professional quality irons and boards. Scarf and sweater selection
-              very nice. Prices are are what you would expect for high quality
-              merchandise. Repeat, satisfied customer. Thank you.
+              {{item.content}}
             </p>
-            <span class="count-like"> 1 person found this helpful </span>
-            <div class="container-btn">
-              <button class="like">
-                thích <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-              </button>
-            </div>
+            <span class="count-like"> {{item.date|date:"d-m-Y"}} </span>
+
           </div>
         </div>
-        <div class="comment-item row">
-          <div class="user col-md-3">
-            <h4 class="name">Phạm tiến lực</h4>
-          </div>
-          <div class="comment col-md-9">
-            <div class="star-review">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-            </div>
-            <h4 class="title">Great products. Great service</h4>
-            <p class="text">
-              Love the Saphire Shoe Care line. Nearly impossible to find .
-              Hanger Project has expanded into other areas of clothing care with
-              professional quality irons and boards. Scarf and sweater selection
-              very nice. Prices are are what you would expect for high quality
-              merchandise. Repeat, satisfied customer. Thank you.
-            </p>
-            <span class="count-like"> 1 person found this helpful </span>
-            <div class="container-btn">
-              <button class="like">
-                thích <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="comment-item row">
-          <div class="user col-md-3">
-            <h4 class="name">Phạm tiến lực</h4>
-          </div>
-          <div class="comment col-md-9">
-            <div class="star-review">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-            </div>
-            <h4 class="title">Great products. Great service</h4>
-            <p class="text">
-              Love the Saphire Shoe Care line. Nearly impossible to find .
-              Hanger Project has expanded into other areas of clothing care with
-              professional quality irons and boards. Scarf and sweater selection
-              very nice. Prices are are what you would expect for high quality
-              merchandise. Repeat, satisfied customer. Thank you.
-            </p>
-            <span class="count-like"> 1 person found this helpful </span>
-            <div class="container-btn">
-              <button class="like">
-                thích <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-              </button>
-            </div>
-          </div>
-        </div>
+        {% endfor %} {% endif %}
+
       </div>
     </div>
   </div>
@@ -385,11 +268,7 @@
           <div class="product-item">
             <a href="{% url 'product-detail' item.id%}" class="card">
               <div class="img">
-                <img
-                  class="card-img-top"
-                  src="{% static 'img/background3.jpg' %}"
-                  alt=""
-                />
+                <img class="card-img-top" src="{% static 'img/background3.jpg' %}" alt="" />
               </div>
               <div class="card-body">
                 <h4 class="card-title">{{item.name}}</h4>

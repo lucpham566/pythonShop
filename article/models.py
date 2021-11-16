@@ -1,4 +1,5 @@
 from django.db import models
+import datetime
 
 # Create your models here.
 class NewCate(models.Model):
@@ -13,6 +14,7 @@ class New(models.Model):
     avatar = models.ImageField(null=True)
     content = models.TextField(max_length=5000, null=True)
     special = models.BooleanField(default=True)
+    date = models.DateField(default=datetime.datetime.now())
 
     def __str__(self) -> str:
         return self.title

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shoes Up</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
- 
+
     <link rel="stylesheet" href="{% static './css/main.css'%}" />
     <link rel="stylesheet" href="{% static './css/styles.css'%}" />
     <link
@@ -63,8 +63,8 @@
             >
           </li>
         </ul>
-        <a href="" class="sign-in-nav">Đăng nhập</a>
-        <a href="" class="sign-up-nav">Đăng ký</a>
+        <!-- <a href="" class="sign-in-nav">Đăng nhập</a>
+        <a href="" class="sign-up-nav">Đăng ký</a> -->
         <a href="{{info_web.youtube}}" class="youtube"
           >Youtube <i class="fa fa-youtube-play" aria-hidden="true"></i>
         </a>
@@ -75,7 +75,7 @@
       <div class="container">
         <div class="box-flex">
           <div class="flex-item left">
-            <form action="">
+            <!-- <form action="">
               <button type="submit">
                 <i class="fa fa-search" aria-hidden="true"></i>
               </button>
@@ -86,7 +86,7 @@
                 id="input"
                 class="search"
               />
-            </form>
+            </form> -->
           </div>
           <div class="flex-item middle">
             <a href="">
@@ -102,18 +102,18 @@
                 <p class="name">Danh mục</p>
               </a>
             </div>
-            <div class="item-right">
+            <!-- <div class="item-right">
               <a href="" class="user">
                 <i class="fa fa-user-circle" aria-hidden="true"></i>
                 <p class="name">Tài khoản</p>
               </a>
-            </div>
-            <div class="item-right">
+            </div> -->
+            <!-- <div class="item-right">
               <a href="" class="home-link">
                 <i class="fa fa-home" aria-hidden="true"></i>
                 <p class="name">Trang chủ</p>
               </a>
-            </div>
+            </div> -->
             <div class="item-right">
               <a href="" class="like">
                 <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -166,6 +166,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'products' %}">Sản phẩm</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'news' %}">Tin tức</a>
               </li>
               {% for item in common_product_cates %}
               <li class="nav-item">
@@ -288,13 +291,13 @@
       </div>
     </header>
 
-
     <div class="over-banner-top"></div>
     <div class="banner-top">
       <div class="container-carousel">
         <div class="carousel-banner">
-        {% if banners %} {% for item in banners %}
-            <div class="slide">
+        {% if banners %} 
+        {% for item in banners %}
+          <div class="slide">
             {% if item.image %}
             <div
               class="background"
@@ -306,15 +309,17 @@
               <h4 class="title">
                 {{item.name}}
               </h4>
-
-              <div class="container-btn">
+              <p class="text"></p>
+              <!-- <div class="container-btn">
                 <div class="button btn-outline-white btn-right">
                   Click ngay
                 </div>
-              </div>
+              </div> -->
             </div>
+            
           </div>
-            {% endfor %} {% endif %}
+        {% endfor %} 
+        {% endif %}
           
         </div>
       </div>
@@ -457,12 +462,19 @@
             {% if videos %} {% for item in videos %}
             <div class="slide">
               <div class="video-item">
-                {{item.video|safe}}
+                <iframe
+                  width="100%"
+                  height="300"
+                  src="{{item.video}}"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
               </div>
             </div>
             {% endfor %} {% endif %}
             
-            <div class="slide">
+            <!-- <div class="slide">
               <div class="video-item">
                 <iframe
                   width="100%"
@@ -497,7 +509,7 @@
                   allowfullscreen
                 ></iframe>
               </div>
-            </div>
+            </div> -->
             
           </div>
         </div>
@@ -540,268 +552,8 @@
                   </a>
                 </div>
               </div>
-            {% endfor %}
+              {% endfor %}
             
-            <div class="slide">
-              <div class="product-item">
-                <a href="product-detail.html" class="card">
-                  <div class="img">
-                    <img
-                      class="card-img-top"
-                      src="img/background3.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title">
-                      Đổi màu nội thất Đổi màu nội thất Đổi màu nội t
-                    </h4>
-                    <p class="card-text">Giá : 6.300.000 đ</p>
-                    <div href="" class="star-review">
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="slide">
-              <div class="product-item">
-                <a href="product-detail.html" class="card">
-                  <div class="img">
-                    <img
-                      class="card-img-top"
-                      src="img/background3.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title">
-                      Đổi màu nội thất Đổi màu nội thất Đổi màu nội t
-                    </h4>
-                    <p class="card-text">Giá : 6.300.000 đ</p>
-                    <div href="" class="star-review">
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="slide">
-              <div class="product-item">
-                <a href="product-detail.html" class="card">
-                  <div class="img">
-                    <img
-                      class="card-img-top"
-                      src="img/background3.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title">
-                      Đổi màu nội thất Đổi màu nội thất Đổi màu nội t
-                    </h4>
-                    <p class="card-text">Giá : 6.300.000 đ</p>
-                    <div href="" class="star-review">
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="slide">
-              <div class="product-item">
-                <a href="product-detail.html" class="card">
-                  <div class="img">
-                    <img
-                      class="card-img-top"
-                      src="img/background3.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title">
-                      Đổi màu nội thất Đổi màu nội thất Đổi màu nội t
-                    </h4>
-                    <p class="card-text">Giá : 6.300.000 đ</p>
-                    <div href="" class="star-review">
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="slide">
-              <div class="product-item">
-                <a href="product-detail.html" class="card">
-                  <div class="img">
-                    <img
-                      class="card-img-top"
-                      src="img/background3.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title">
-                      Đổi màu nội thất Đổi màu nội thất Đổi màu nội t
-                    </h4>
-                    <p class="card-text">Giá : 6.300.000 đ</p>
-                    <div href="" class="star-review">
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="slide">
-              <div class="product-item">
-                <a href="product-detail.html" class="card">
-                  <div class="img">
-                    <img
-                      class="card-img-top"
-                      src="img/background3.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title">
-                      Đổi màu nội thất Đổi màu nội thất Đổi màu nội t
-                    </h4>
-                    <p class="card-text">Giá : 6.300.000 đ</p>
-                    <div href="" class="star-review">
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="slide">
-              <div class="product-item">
-                <a href="product-detail.html" class="card">
-                  <div class="img">
-                    <img
-                      class="card-img-top"
-                      src="img/background3.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title">
-                      Đổi màu nội thất Đổi màu nội thất Đổi màu nội t
-                    </h4>
-                    <p class="card-text">Giá : 6.300.000 đ</p>
-                    <div href="" class="star-review">
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="slide">
-              <div class="product-item">
-                <a href="product-detail.html" class="card">
-                  <div class="img">
-                    <img
-                      class="card-img-top"
-                      src="img/background3.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title">
-                      Đổi màu nội thất Đổi màu nội thất Đổi màu nội t
-                    </h4>
-                    <p class="card-text">Giá : 6.300.000 đ</p>
-                    <div href="" class="star-review">
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="slide">
-              <div class="product-item">
-                <a href="product-detail.html" class="card">
-                  <div class="img">
-                    <img
-                      class="card-img-top"
-                      src="img/background3.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title">
-                      Đổi màu nội thất Đổi màu nội thất Đổi màu nội t
-                    </h4>
-                    <p class="card-text">Giá : 6.300.000 đ</p>
-                    <div href="" class="star-review">
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="slide">
-              <div class="product-item">
-                <a href="product-detail.html" class="card">
-                  <div class="img">
-                    <img
-                      class="card-img-top"
-                      src="img/background3.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title">
-                      Đổi màu nội thất Đổi màu nội thất Đổi màu nội t
-                    </h4>
-                    <p class="card-text">Giá : 6.300.000 đ</p>
-                    <div href="" class="star-review">
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -813,70 +565,26 @@
             <hr class="line" />
           </div>
           <div class="carousel-news">
+            {% if common_new_specials %}
+            {% for item in common_new_specials %}
             <div class="slide">
               <a href="" class="new-item">
                 <div class="img">
-                  <img src="./img/background1.jpg" alt="" />
+                  <img src="{{item.avatar.url}}" alt="" />
                 </div>
                 <div class="caption">
                   <h3 class="title">
-                    Chào mừng bạn đến với thế giới đồ da của Shoes up
+                    {{item.title}}
                   </h3>
                 </div>
               </a>
             </div>
-            <div class="slide">
-              <a href="" class="new-item">
-                <div class="img">
-                  <img src="./img/background1.jpg" alt="" />
-                </div>
-                <div class="caption">
-                  <h3 class="title">
-                    Chào mừng bạn đến với thế giới đồ da của Shoes up
-                  </h3>
-                </div>
-              </a>
-            </div>
-            <div class="slide">
-              <a href="" class="new-item">
-                <div class="img">
-                  <img src="./img/background1.jpg" alt="" />
-                </div>
-                <div class="caption">
-                  <h3 class="title">
-                    Chào mừng bạn đến với thế giới đồ da của Shoes up
-                  </h3>
-                </div>
-              </a>
-            </div>
-            <div class="slide">
-              <a href="" class="new-item">
-                <div class="img">
-                  <img src="./img/background1.jpg" alt="" />
-                </div>
-                <div class="caption">
-                  <h3 class="title">
-                    Chào mừng bạn đến với thế giới đồ da của Shoes up
-                  </h3>
-                </div>
-              </a>
-            </div>
-            <div class="slide">
-              <a href="" class="new-item">
-                <div class="img">
-                  <img src="./img/background1.jpg" alt="" />
-                </div>
-                <div class="caption">
-                  <h3 class="title">
-                    Chào mừng bạn đến với thế giới đồ da của Shoes up
-                  </h3>
-                </div>
-              </a>
-            </div>
+            {% endfor %}
+            {% endif %}
           </div>
         </div>
       </div>
-      <div class="news-section">
+      <!-- <div class="news-section">
         <div class="container">
           <div class="container-title-section">
             <h2 class="title-section">Bài viết được xem nhiều nhất</h2>
@@ -945,7 +653,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <section class="testimonial">
         <div class="container">
           <div class="title-section text-center">
@@ -960,7 +668,7 @@
           <div class="owl-carousel row">
             <div class="col-lg-6">
               <div class="item">
-                <img src="./img/person1.jpg" alt="" class="avatar" />
+                <img src="./media/chuoi_wP218mX.jpg" alt="" class="avatar" />
                 <div class="testimonials-content">
                   <div class="name mb-3"><b>Ms. Luyến – Đống Đa Hà Nội</b></div>
                   <div class="position"><i>Nhân viên văn phòng</i></div>
@@ -975,7 +683,7 @@
             </div>
             <div class="col-lg-6">
               <div class="item">
-                <img src="./img/person2.jpg" alt="" class="avatar" />
+                <img src="./media/chuoi_wP218mX.jpg" alt="" class="avatar" />
                 <div class="testimonials-content">
                   <div class="name mb-3"><b>Ms. Vân – Ngọc Hồi Hà Nội</b></div>
                   <div class="position"><i>Nội trợ</i></div>
@@ -992,10 +700,6 @@
         </div>
       </section>
     </main>
-
-    
-
-
 
     <!-- phone -->
     <div class="hotline-phone-ring-wrap">
