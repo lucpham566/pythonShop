@@ -438,7 +438,34 @@ const Toast = Swal.mixin({
   }
 })
 
+$("footer .add-subscriber").click(function () {
+  // var id = $(this).attr("id");
+  var url = $(this).attr("url");
+  var name = $("#customer_name").val()
+  var phone = $("#customer_phone").val()
+  var email = $("#customer_email").val()
+  var address = $("#customer_address").val()
 
+
+  $.ajax({
+    url: 'http://127.0.0.1:8000' + url,
+    type: 'get',
+    dataType: 'html',
+    data: {
+      name,phone,email,address
+    }
+  }).done(function (ketqua) {
+    data = JSON.parse(ketqua)
+    Toast.fire({
+      icon: 'success',
+      title: 'Gửi thông tin thành công'
+    })
+    var name = $("#customer_name").val("")
+    var phone = $("#customer_phone").val("")
+    var email = $("#customer_email").val("")
+    var address = $("#customer_address").val("")
+  });
+})
 
 
 $(".product-list .product-item .button").click(function () {
@@ -512,7 +539,7 @@ $(".product-detail .comment-box .add-comment").click(function () {
     }
   }).done(function (ketqua) {
     data = JSON.parse(ketqua)
-    console.log(data);
+    // console.log(data);
     Toast.fire({
       icon: 'success',
       title: 'Bình luận thành công'
@@ -528,3 +555,13 @@ $(".product-detail .comment-box .add-comment").click(function () {
 
   });
 })
+
+$(".products .search_product").click(function () {
+  var url = $(this).attr("url");
+  var name = $("#product_name").val()
+  window.location = url+"?product_name="+name;
+})
+
+
+
+

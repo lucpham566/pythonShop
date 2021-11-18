@@ -208,29 +208,24 @@
           </div> -->
         </div>
         <div class="col-lg-9">
-          <!-- <div class="form-group">
-            <input
+          <div class="form-group row">
+            <div class="col-8">
+              <input
               type="text"
               class="form-control search"
-              name=""
-              id=""
+              name="product_name"
+              id="product_name"
               aria-describedby="helpId"
               placeholder="Tìm kiếm sản phẩm"
             />
-          </div>
-          <div class="title-list-product">
-            <div class="form-select">
-              <span class="title">Sắp xếp theo:</span>
-              <div class="form-group">
-                <a href="" class="button active"> Phổ biến </a>
-                <a href="" class="button"> Mới nhất </a>
-                <a href="" class="button"> Bán chạy </a>
-                <select id="my-select" class="select button" name="">
-                  <option>Giá cao đến thấp</option>
-                </select>
-              </div>
             </div>
-          </div> -->
+            <div class="col">
+              <button url="{% url 'product-cate' category.id %}" class="button btn-main search_product">
+                Tìm kiếm
+              </button>
+            </div>
+            
+          </div>
 
           <div class="content">
             <div class="product-list row">
@@ -272,14 +267,22 @@
             </div>
             <div class="container-pagination">
               <div class="pagination">
-                <a href="#">&laquo;</a>
-                <a href="#">1</a>
-                <a href="#" class="active">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#">5</a>
-                <a href="#">6</a>
-                <a href="#">&raquo;</a>
+                {% if products.has_previous %}
+                <a href="?page={{ products.previous_page_number }}">&laquo; Trước</a>
+                {% endif %}
+
+                {% for i in products.paginator.page_range%}
+                  {% if  products.number == i %}
+                  <a href="?page={{i}}" class="active">{{i}}</a>
+                  {% else %}
+                  <a href="?page={{i}}">{{i}}</a>
+                  {% endif %}
+                
+                  {% endfor %} 
+
+                {% if products.has_next %}
+                <a href="?page={{ products.next_page_number }}">Sau &raquo;</a>
+                {% endif %}
               </div>
             </div>
           </div>

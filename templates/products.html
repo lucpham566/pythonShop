@@ -176,16 +176,24 @@
           </div> -->
         </div>
         <div class="col-lg-9">
-          <!-- <div class="form-group">
-            <input
+          <div class="form-group row">
+            <div class="col-8">
+              <input
               type="text"
               class="form-control search"
-              name=""
-              id=""
+              name="product_name"
+              id="product_name"
               aria-describedby="helpId"
               placeholder="Tìm kiếm sản phẩm"
             />
-          </div> -->
+            </div>
+            <div class="col">
+              <button url="{% url 'products' %}" class="button btn-main search_product">
+                Tìm kiếm
+              </button>
+            </div>
+            
+          </div>
           <!-- <div class="title-list-product">
             <div class="form-select">
               <span class="title">Sắp xếp theo:</span>
@@ -240,13 +248,12 @@
                 <a href="?page={{ products.previous_page_number }}">&laquo; Trước</a>
                 {% endif %}
 
-               
                 {% for i in products.paginator.page_range%}
                   {% if  products.number == i %}
                   <a href="?page={{i}}" class="active">{{i}}</a>
-                  {%else %}
+                  {% else %}
                   <a href="?page={{i}}">{{i}}</a>
-                  {%endif %}
+                  {% endif %}
                 
                   {% endfor %} 
 

@@ -170,15 +170,23 @@
                     
                   </div>
                   <div class="container-pagination">
-                    <div   class="pagination">
-                      <a href="#">&laquo;</a>
-                      <a href="#">1</a>
-                      <a href="#" class="active">2</a>
-                      <a href="#">3</a>
-                      <a href="#">4</a>
-                      <a href="#">5</a>
-                      <a href="#">6</a>
-                      <a href="#">&raquo;</a>
+                    <div class="pagination">
+                      {% if news.has_previous %}
+                      <a href="?page={{ news.previous_page_number }}">&laquo; Trước</a>
+                      {% endif %}
+      
+                      {% for i in news.paginator.page_range%}
+                        {% if  news.number == i %}
+                        <a href="?page={{i}}" class="active">{{i}}</a>
+                        {% else %}
+                        <a href="?page={{i}}">{{i}}</a>
+                        {% endif %}
+                      
+                        {% endfor %} 
+      
+                      {% if news.has_next %}
+                      <a href="?page={{ news.next_page_number }}">Sau &raquo;</a>
+                      {% endif %}
                     </div>
                   </div>
                 </div>

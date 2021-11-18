@@ -11,9 +11,17 @@ class ProductPage(View):
     def get(self,request):
         product_cates = ProductCate.objects.all()
         product_list = Product.objects.all()
-        paginator = Paginator(product_list, 3)
         
         page_number = request.GET.get("page")
+        if request.GET.get("product_name"):
+            try:
+                name=request.GET.get("product_name")
+                product_list = Product.objects.filter(name__contains=name)
+            except Product.DoesNotExist:
+                product_list = None
+            
+        paginator = Paginator(product_list, 3)
+        
         try:
             products = paginator.page(page_number)
         except PageNotAnInteger:
@@ -30,11 +38,34 @@ class ProductPage(View):
 class ProductCatePage(View):
 
     def get(self,request,id):
-        products = Product.objects.filter(category = id)
+        product_list = Product.objects.filter(category = id)
         product_cates = ProductCate.objects.all()
         category = ProductCate.objects.get(pk=id)
+        
+        
+        page_number = request.GET.get("page")
+        if request.GET.get("product_name"):
+            try:
+                name=request.GET.get("product_name")
+                product_list = Product.objects.filter(category = id,name__contains=name)
+            except Product.DoesNotExist:
+                product_list = None
+            
+        paginator = Paginator(product_list, 3)
+        
+        try:
+            products = paginator.page(page_number)
+        except PageNotAnInteger:
+            # Nếu page_number không thuộc kiểu integer, trả về page đầu tiên
+            products = paginator.page(1)
+        except EmptyPage:
+            # Nếu page không có item nào, trả về page cuối cùng
+            products = paginator.page(paginator.num_pages)
+
+        
         context = {"product_cates" : product_cates,"products":products,"category":category}
         return render(request,'product_cate.html',context)
+
 class ProductDetail(View):
 
     def get(self,request,id):
@@ -45,7 +76,8 @@ class ProductDetail(View):
         comments = Comment.objects.filter(product = product).order_by('-id')
         context = {"product" : product,"related_products" : related_products,"images" : images,"comments" : comments}
         return render(request,'product-detail.html',context)
-    
+
+
 def addComment(request):
     
     vote = request.GET.get('vote')

@@ -53,7 +53,7 @@
                     {% endif %}
                   </ul>
                 </div>
-                <div class="category-container tags">
+                <!-- <div class="category-container tags">
                   <h3 class="title">
                     Các thẻ liên kết
                   </h3>
@@ -89,7 +89,7 @@
                     <a href="" class="tag">Chọn bộ suit phù hợp</a>
                     <a href="" class="tag">Họa tiết sọc</a>
                   </div>
-                </div>
+                </div> -->
               </div>
               <div class="col-lg-9">
                 <h2 class="title-list-product">
@@ -103,7 +103,7 @@
                         {{thisnew.description}}
                     </p>
                     <p>
-                      {{thisnew.content}}
+                      {{thisnew.content|safe}}
                     </p>
                   <!-- <b>nội thất đẹp nhất</b>
                   <p>

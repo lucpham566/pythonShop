@@ -62,15 +62,15 @@
 
               <li class="property-item">
                 <p class="title">Tình trạng:</p>
-                <div class="content">Còn hàng</div>
+                <div class="content">{{product.status}}</div>
               </li>
               <li class="property-item">
                 <p class="title">Bảo hành:</p>
-                <div class="content">12 tháng</div>
+                <div class="content">{{product.warranty_time}}</div>
               </li>
               <li class="property-item">
                 <p class="title">Sản xuất tại:</p>
-                <div class="content">Trung Quốc</div>
+                <div class="content">{{product.country}}</div>
               </li>
               <li class="property-item property-select">
                 <p class="title">Loại:</p>
@@ -227,7 +227,7 @@
           <textarea class="form-control" name="" id="input_content" rows="3"></textarea>
           <div class="container-btn mt-2">
             <button type="submit" class="button btn-main add-comment" product_id="{{product.id}}"
-              url="{% url 'comment-product'%}">Gửi</button>
+              url="{% url 'comment-product' %}">Gửi</button>
             <button type="button" id="close" class="button btn-main-outline">
               hủy
             </button>
@@ -268,7 +268,7 @@
           <div class="product-item">
             <a href="{% url 'product-detail' item.id%}" class="card">
               <div class="img">
-                <img class="card-img-top" src="{% static 'img/background3.jpg' %}" alt="" />
+                <img class="card-img-top" src="{{item.avatar.url}}" alt="" />
               </div>
               <div class="card-body">
                 <h4 class="card-title">{{item.name}}</h4>
@@ -280,7 +280,7 @@
                 </div>
               </div>
               <div class="text-center mb-2">
-                <button href="" class="button btn-main">
+                <button id="{{item.id}}" url="{% url 'add-to-cart' %}" class="button btn-main add-to-cart">
                   Thêm vào giỏ hàng
                 </button>
               </div>

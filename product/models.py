@@ -1,6 +1,7 @@
 from django.db import models
 import datetime
 
+
  
 class ProductCate(models.Model):
     name = models.CharField(max_length=200)
@@ -18,7 +19,9 @@ class Product(models.Model):
     intro = models.TextField(max_length=300)
     content = models.TextField(max_length=5000)
     special = models.BooleanField(default=True)
-
+    status = models.CharField(max_length=100, null=True)
+    country = models.CharField(max_length=100, null=True)
+    warranty_time = models.CharField(max_length=100, null=True)
     def __str__(self) -> str:
         return self.name
 
@@ -36,7 +39,7 @@ class Comment(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField(max_length=5000)
     vote = models.IntegerField(default=0)
-    date = models.DateField(default=datetime.datetime.now())
+    date = models.DateField(default=datetime.datetime.now)
     
     def __str__(self) -> str:
         return self.name
