@@ -412,9 +412,7 @@ $('.nav-item-mobile .add').click(function () {
   $('.box-sub-menu').css({
     opacity: 1,
     transform: 'translateX(0)',
-
   })
-
 })
 
 $('.box-sub-menu .back-cate').click(function () {

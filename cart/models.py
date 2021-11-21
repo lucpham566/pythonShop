@@ -22,5 +22,6 @@ class CartItem(models.Model):
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
     item = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField(default=0)
+    price = models.IntegerField(default=0)
     def __str__(self) -> str:
-        return self.item.name
+        return self.cart.customer.name

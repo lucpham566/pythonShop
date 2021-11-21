@@ -40,14 +40,17 @@ def addToCart(request):
                 'name' : product.name,
                 'price' : product.price,
                 'image' : product.avatar.url if product.avatar else "",
-                'quantity' : int(cart[id]['quantity']) + int(num)
+                'quantity' : int(cart[id]['quantity']) + int(num),
+                'id' : id,
+
             }
         else :
             itemCart = {
                 'name' : product.name,
                 'price' : product.price,
                 'image' : product.avatar.url if product.avatar else "",
-                'quantity' : 1
+                'quantity' : int(num),
+                'id' : id
             }
         itemCart['total'] = int(itemCart['price'])*int(itemCart['quantity'])
         cart[id]= itemCart
@@ -91,7 +94,7 @@ def process(request):
         newCart.save()
         for item in cart:
             product = Product.objects.get(pk=item)
-            cartItem = CartItem.objects.create(cart=newCart,item=product,quantity=cart[item]['quantity'])
+            cartItem = CartItem.objects.create(cart=newCart,item=product,quantity=cart[item]['quantity'],price=product.price)
             cartItem.save()
 
         total = 0

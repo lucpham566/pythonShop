@@ -13,6 +13,7 @@ class ProductPage(View):
         product_list = Product.objects.all()
         
         page_number = request.GET.get("page")
+        
         if request.GET.get("product_name"):
             try:
                 name=request.GET.get("product_name")
@@ -85,7 +86,6 @@ def addComment(request):
     title = request.GET.get('title')
     content = request.GET.get('content')
     product_id = request.GET.get('product_id')
-    # return JsonResponse({"success":"thành công"})
     
     product = Product.objects.get(pk=product_id)
     

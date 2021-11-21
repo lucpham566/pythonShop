@@ -14,6 +14,7 @@
             id="dataTable"
             width="100%"
             cellspacing="0"
+            style="text-align: center"
           >
             <thead>
               <tr>
@@ -41,7 +42,7 @@
                     </div>
                     <div class="detail">
                       <h4 class="title">
-                        <a class="title" href="">
+                        <a class="title" href="{% url 'product-detail' value.id %}">
                           {{value.name}}
                         </a>
                       </h4>
@@ -53,23 +54,7 @@
                 <td class="d-none d-md-block">{{value.price}} đ</td>
                 <td>
                   <form class="increases-form">
-                    <div
-                      class="value-button"
-                      id="decrease"
-                      onclick="decreaseValue()"
-                      value="Decrease Value"
-                    >
-                      -
-                    </div>
-                    <input type="number" id="number" value="{{value.quantity}}" />
-                    <div
-                      class="value-button"
-                      id="increase"
-                      onclick="increaseValue()"
-                      value="Increase Value"
-                    >
-                      +
-                    </div>
+                    {{value.quantity}}
                   </form>
                 </td>
                 <td class="d-none d-md-block">{{value.total}} đ</td>
