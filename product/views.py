@@ -20,7 +20,7 @@ class ProductPage(View):
             except Product.DoesNotExist:
                 product_list = None
             
-        paginator = Paginator(product_list, 3)
+        paginator = Paginator(product_list, 6)
         
         try:
             products = paginator.page(page_number)
@@ -51,7 +51,7 @@ class ProductCatePage(View):
             except Product.DoesNotExist:
                 product_list = None
             
-        paginator = Paginator(product_list, 3)
+        paginator = Paginator(product_list, 6)
         
         try:
             products = paginator.page(page_number)

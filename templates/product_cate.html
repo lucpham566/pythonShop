@@ -231,7 +231,7 @@
             <div class="product-list row">
               {% if products %} {% for item in products %}
               <div class="product-item col-md-4 col-6">
-                <a href="{% url 'product-detail' item.id%}" class="card">
+                <div  class="card">
                   <div class="img">
                     {% if item.avatar %}
                     <img
@@ -257,11 +257,14 @@
                     </div>
                   </div>
                   <div class="text-center mb-2">
-                    <button href="" class="button btn-main">
+                    <button id="{{item.id}}" url="{% url 'add-to-cart' %}" class="button btn-main">
                       Thêm vào giỏ hàng
                     </button>
+                    <a href="{% url 'product-detail' item.id%}" class="button btn-success mt-2">
+                      Chi tiết
+                    </a>
                   </div>
-                </a>
+                </div>
               </div>
               {% endfor %} {% endif %}
             </div>

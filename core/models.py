@@ -1,6 +1,6 @@
 
 from django.db import models
-
+from ckeditor.fields import RichTextField
  
 class Banner(models.Model):
     name = models.CharField(max_length=200)
@@ -27,7 +27,7 @@ class Service(models.Model):
     address = models.CharField(max_length=300)
     abus = models.CharField(max_length=300, null=True)
     abus_title = models.CharField(max_length=300, null=True)
-    abus_content = models.TextField(max_length=1000, null=True)
+    abus_content = RichTextField(null=True)
     abus_image = models.ImageField(null=True)
     def __str__(self) -> str:
         return self.web_title

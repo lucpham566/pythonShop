@@ -10,7 +10,7 @@ class NewsPage(View):
         new_cates = NewCate.objects.all()
         new_list = New.objects.all().order_by('-id')
         new_specials = New.objects.filter(special = True).order_by('-id')
-        paginator = Paginator(new_list, 3)
+        paginator = Paginator(new_list, 6)
         
         page_number = request.GET.get("page")
         try:

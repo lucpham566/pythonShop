@@ -102,7 +102,7 @@ def process(request):
         bill.save()
 
         request.session['checkout_success']=True
-
+        request.session['cart']=[]
         return redirect("checkout")
     else:
         return HttpResponse("khong phai post method")
